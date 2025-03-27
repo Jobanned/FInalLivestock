@@ -9,14 +9,42 @@ namespace Final
             InitializeComponent();
         }
 
-        private void lnklblForgotPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-            ForgotPassword fp = new ForgotPassword();
-            fp.Show();
-            this.Hide();
+            string username = txtbxUser.Text;
+            string password = tbxPass.Text;
+
+            if (IsAdmin(username, password))
+            {
+                AdminMain am = new AdminMain();
+                am.Show();
+                this.Hide();
+            }
+            else if (IsCustomer(username, password))
+            {
+                CustomerMain cm = new CustomerMain();
+                cm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Invalid credentials");
+            }
         }
 
-        private void lnklblCreateAcc_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private bool IsAdmin(string username, string password)
+        {
+            // Implement your admin authentication logic here
+            return username == "admin" && password == "123";
+        }
+
+        private bool IsCustomer(string username, string password)
+        {
+            // Implement your customer authentication logic here
+            return username == "customer" && password == "customer123";
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
         }

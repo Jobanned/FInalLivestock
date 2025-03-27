@@ -24,9 +24,9 @@ namespace FINAL
 
         private void lnklblLogin_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Login login = new Login();
-            login.Show();
-            this.Hide();
+          //  Login login = new Login();
+           // login.Show();
+           // this.Hide();
         }
 
         private void lnklblEmail_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
@@ -48,6 +48,11 @@ namespace FINAL
             NewPass np = new NewPass();
             this.Controls.Add(np);
             np.BringToFront();
+        }
+
+        private void parrotGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

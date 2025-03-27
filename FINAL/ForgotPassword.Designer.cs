@@ -78,6 +78,7 @@
             parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             parrotGradientPanel1.TopLeft = Color.FromArgb(240, 231, 213);
             parrotGradientPanel1.TopRight = Color.FromArgb(156, 188, 95);
+            parrotGradientPanel1.Paint += parrotGradientPanel1_Paint;
             // 
             // label3
             // 
