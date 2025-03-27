@@ -1,3 +1,5 @@
+using FINAL;
+
 namespace Final
 {
     public partial class Login : Form
@@ -7,7 +9,14 @@ namespace Final
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void lnklblForgotPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ForgotPassword fp = new ForgotPassword();
+            fp.Show();
+            this.Hide();
+        }
+
+        private void lnklblCreateAcc_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
         }
