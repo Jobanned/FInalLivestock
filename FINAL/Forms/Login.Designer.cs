@@ -219,6 +219,7 @@
             tbxPass.PasswordChar = '*';
             tbxPass.Size = new Size(219, 36);
             tbxPass.TabIndex = 58;
+            tbxPass.KeyDown += tbxPass_KeyDown;
             // 
             // label3
             // 

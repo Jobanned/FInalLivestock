@@ -1,76 +1,92 @@
 using FINAL;
 using ReaLTaiizor.Forms;
+using System.Data;
 using System.Data.OleDb;
 using System.Security.Cryptography;
 using System.Text;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Final
 {
     public partial class Login : Form
     {
-        private const string Uname = "Admin";
-        private const string Password = "123";
-        string role = "User";
+        OleDbConnection? myConn;
+        OleDbDataAdapter? da;
+        OleDbCommand? cmd;
+        DataSet? ds;
         public Login()
         {
             InitializeComponent();
 
         }
-        private bool VerifyPassword(string enteredPassword, string storedHash)
+        private string HashPassword(string password)
         {
             using (SHA256 sha256 = SHA256.Create())
             {
-                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(enteredPassword));
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
                 StringBuilder builder = new StringBuilder();
                 foreach (byte b in bytes)
                 {
-                    builder.Append(b.ToString("x2")); // Convert byte to hex string
+                    builder.Append(b.ToString("x2"));
                 }
-                return builder.ToString() == storedHash; // Compare hashed values
+                return builder.ToString();
             }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtbxUser.Text == Uname && tbxPass.Text == Password)
+            if (txtbxUser.Text == "admin" && tbxPass.Text == "123")
             {
+                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 AdminMain admin = new AdminMain();
-                admin.Show();
                 this.Hide();
+                admin.ShowDialog();
+                this.Close();
                 return;
-
             }
-            using (OleDbConnection myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb"))
+
+            myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source= \"C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb\"");
+
+            if (string.IsNullOrWhiteSpace(txtbxUser.Text) || string.IsNullOrWhiteSpace(tbxPass.Text))
+            {
+                MessageBox.Show("Please enter username & password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string hashedPassword = HashPassword(tbxPass.Text);
+            string query = "SELECT Username FROM Account WHERE Username = ? AND [Password] = ?";
+
+            try
             {
                 myConn.Open();
-                string query = "SELECT ID, Password FROM Account WHERE Username = @UserName";
-
                 using (OleDbCommand cmd = new OleDbCommand(query, myConn))
                 {
-                    cmd.Parameters.AddWithValue("@UserName", txtbxUser.Text);
-                    OleDbDataReader reader = cmd.ExecuteReader();
+                    cmd.Parameters.AddWithValue("@username", txtbxUser.Text);
+                    cmd.Parameters.AddWithValue("@password", hashedPassword);
 
-                    if (reader.Read()) // If username exists in database
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
                     {
-                        int userID = Convert.ToInt32(reader["ID"]); // Fetch ID
-                        string storedHash = reader["Password"].ToString(); // Fetch hashed password
+                        string userType = result.ToString();
+                        MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CustomerMain cm = new CustomerMain();
+                        cm.Show();
+                        this.Hide();
 
-                        if (VerifyPassword(tbxPass.Text, storedHash)) // Compare input password with stored hash
-                        {
-                            CustomerMain cm = new CustomerMain(userID, role);
-                            cm.Show();
-                            this.Hide();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Incorrect password. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
                     }
                     else
                     {
-                        MessageBox.Show("User not found.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Invalid username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database connection error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                myConn.Close();
             }
         }
 
@@ -108,6 +124,15 @@ namespace Final
             ForgotPassword fp = new ForgotPassword();
             fp.Show();
             this.Hide();
+        }
+
+        private void tbxPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin_Click(sender, e);
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }
