@@ -41,10 +41,10 @@ namespace Final
         {
             myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb"); 
             da = new OleDbDataAdapter("SELECT *FROM Account", myConn);
-            string query = "Insert into Account ([Username], [Name], [Email], [PhoneNum], [Password]) values (@Username, @Name, @Email, @PhoneNum, @Password)";
+            string query = "Insert into Account ([Username], [Name], [Email], [PhoneNum], [Address], [Password]) values (@Username, @Name, @Email, @PhoneNum, @Address, @Password)";
             myConn.Open();
             if (tbxUser.Text == string.Empty || tbxName.Text == string.Empty || tbxPass.Text == string.Empty || tbxConPass.Text == string.Empty
-                || tbxEmail.Text == string.Empty || tbxPhone.Text == string.Empty)
+                || tbxEmail.Text == string.Empty || tbxPhone.Text == string.Empty || tbxAddress.Text == string.Empty)
             {
                 MessageBox.Show("All fields are required!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -59,6 +59,7 @@ namespace Final
             cmd.Parameters.AddWithValue("@fullname", tbxName.Text);
             cmd.Parameters.AddWithValue("@email", tbxEmail.Text);
             cmd.Parameters.AddWithValue("@phonenum", tbxPhone.Text);
+            cmd.Parameters.AddWithValue("@Address", tbxAddress.Text);
             cmd.Parameters.AddWithValue("@password", HashPassword(tbxPass.Text));
             cmd.ExecuteNonQuery();
             myConn.Close();

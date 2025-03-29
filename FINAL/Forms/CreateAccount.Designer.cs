@@ -57,6 +57,9 @@
             panel1 = new Panel();
             label5 = new Label();
             Exit = new Button();
+            pictureBox7 = new PictureBox();
+            lblAddress = new Label();
+            tbxAddress = new TextBox();
             parrotGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -65,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             SuspendLayout();
             // 
             // parrotGradientPanel1
@@ -72,6 +76,9 @@
             parrotGradientPanel1.BottomLeft = Color.FromArgb(122, 90, 73);
             parrotGradientPanel1.BottomRight = Color.FromArgb(156, 188, 95);
             parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            parrotGradientPanel1.Controls.Add(pictureBox7);
+            parrotGradientPanel1.Controls.Add(lblAddress);
+            parrotGradientPanel1.Controls.Add(tbxAddress);
             parrotGradientPanel1.Controls.Add(chxbxShowPass);
             parrotGradientPanel1.Controls.Add(label10);
             parrotGradientPanel1.Controls.Add(pictureBox6);
@@ -114,7 +121,7 @@
             // 
             chxbxShowPass.AutoSize = true;
             chxbxShowPass.BackColor = Color.Transparent;
-            chxbxShowPass.Location = new Point(447, 327);
+            chxbxShowPass.Location = new Point(447, 325);
             chxbxShowPass.Name = "chxbxShowPass";
             chxbxShowPass.Size = new Size(132, 24);
             chxbxShowPass.TabIndex = 75;
@@ -138,7 +145,7 @@
             // 
             pictureBox6.BackColor = Color.Transparent;
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(28, 437);
+            pictureBox6.Location = new Point(28, 380);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(44, 36);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
@@ -151,7 +158,7 @@
             label9.BackColor = Color.Transparent;
             label9.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.Transparent;
-            label9.Location = new Point(78, 414);
+            label9.Location = new Point(78, 357);
             label9.Name = "label9";
             label9.Size = new Size(108, 20);
             label9.TabIndex = 72;
@@ -161,7 +168,7 @@
             // 
             tbxEmail.BorderStyle = BorderStyle.None;
             tbxEmail.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxEmail.Location = new Point(78, 437);
+            tbxEmail.Location = new Point(78, 380);
             tbxEmail.Multiline = true;
             tbxEmail.Name = "tbxEmail";
             tbxEmail.Size = new Size(252, 36);
@@ -171,7 +178,7 @@
             // 
             pictureBox4.BackColor = Color.Transparent;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(397, 288);
+            pictureBox4.Location = new Point(397, 286);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(44, 36);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -184,7 +191,7 @@
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.Transparent;
-            label8.Location = new Point(447, 265);
+            label8.Location = new Point(447, 263);
             label8.Name = "label8";
             label8.Size = new Size(136, 20);
             label8.TabIndex = 69;
@@ -194,7 +201,7 @@
             // 
             tbxConPass.BorderStyle = BorderStyle.None;
             tbxConPass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxConPass.Location = new Point(447, 288);
+            tbxConPass.Location = new Point(447, 286);
             tbxConPass.Multiline = true;
             tbxConPass.Name = "tbxConPass";
             tbxConPass.PasswordChar = '*';
@@ -205,7 +212,7 @@
             // 
             pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(28, 354);
+            pictureBox3.Location = new Point(28, 313);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(44, 36);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -218,7 +225,7 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.Transparent;
-            label7.Location = new Point(78, 331);
+            label7.Location = new Point(78, 290);
             label7.Name = "label7";
             label7.Size = new Size(119, 20);
             label7.TabIndex = 66;
@@ -228,7 +235,7 @@
             // 
             tbxPhone.BorderStyle = BorderStyle.None;
             tbxPhone.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxPhone.Location = new Point(78, 354);
+            tbxPhone.Location = new Point(78, 313);
             tbxPhone.Multiline = true;
             tbxPhone.Name = "tbxPhone";
             tbxPhone.Size = new Size(252, 36);
@@ -238,7 +245,7 @@
             // 
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(28, 267);
+            pictureBox2.Location = new Point(28, 247);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(44, 36);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -251,7 +258,7 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.Transparent;
-            label6.Location = new Point(78, 244);
+            label6.Location = new Point(78, 224);
             label6.Name = "label6";
             label6.Size = new Size(82, 20);
             label6.TabIndex = 63;
@@ -261,7 +268,7 @@
             // 
             tbxUser.BorderStyle = BorderStyle.None;
             tbxUser.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxUser.Location = new Point(78, 267);
+            tbxUser.Location = new Point(78, 247);
             tbxUser.Multiline = true;
             tbxUser.Name = "tbxUser";
             tbxUser.Size = new Size(252, 36);
@@ -306,7 +313,7 @@
             // 
             pictureBox5.BackColor = Color.Transparent;
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(397, 204);
+            pictureBox5.Location = new Point(397, 202);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(44, 36);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
@@ -343,7 +350,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Transparent;
-            label1.Location = new Point(447, 181);
+            label1.Location = new Point(447, 179);
             label1.Name = "label1";
             label1.Size = new Size(138, 20);
             label1.TabIndex = 55;
@@ -381,7 +388,7 @@
             // 
             tbxPass.BorderStyle = BorderStyle.None;
             tbxPass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxPass.Location = new Point(447, 204);
+            tbxPass.Location = new Point(447, 202);
             tbxPass.Multiline = true;
             tbxPass.Name = "tbxPass";
             tbxPass.PasswordChar = '*';
@@ -427,6 +434,39 @@
             Exit.UseVisualStyleBackColor = false;
             Exit.Click += Exit_Click;
             // 
+            // pictureBox7
+            // 
+            pictureBox7.BackColor = Color.Transparent;
+            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.Location = new Point(28, 449);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(44, 36);
+            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox7.TabIndex = 78;
+            pictureBox7.TabStop = false;
+            // 
+            // lblAddress
+            // 
+            lblAddress.AutoSize = true;
+            lblAddress.BackColor = Color.Transparent;
+            lblAddress.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAddress.ForeColor = Color.Transparent;
+            lblAddress.Location = new Point(78, 426);
+            lblAddress.Name = "lblAddress";
+            lblAddress.Size = new Size(112, 20);
+            lblAddress.TabIndex = 77;
+            lblAddress.Text = "Home Address:";
+            // 
+            // tbxAddress
+            // 
+            tbxAddress.BorderStyle = BorderStyle.None;
+            tbxAddress.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxAddress.Location = new Point(78, 449);
+            tbxAddress.Multiline = true;
+            tbxAddress.Name = "tbxAddress";
+            tbxAddress.Size = new Size(252, 36);
+            tbxAddress.TabIndex = 76;
+            // 
             // CreateAccount
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -447,6 +487,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ResumeLayout(false);
         }
 
@@ -480,5 +521,8 @@
         private Label label5;
         private Button Exit;
         private CheckBox chxbxShowPass;
+        private PictureBox pictureBox7;
+        private Label lblAddress;
+        private TextBox tbxAddress;
     }
 }
