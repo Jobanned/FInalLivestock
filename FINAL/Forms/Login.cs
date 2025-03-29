@@ -7,6 +7,7 @@ namespace Final
         public Login()
         {
             InitializeComponent();
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -48,12 +49,29 @@ namespace Final
         {
             CreateAccount createAccount = new CreateAccount();
             createAccount.Show();
-           // this.Hide();
+            this.Hide();
+
         }
 
         private void Exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+
+        private void chkbxShowPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkbxShowPass.Checked == true)
+            {
+                tbxPass.UseSystemPasswordChar = false;
+                tbxPass.PasswordChar = '\0';
+               // tbxPass.PasswordChar = '*';
+            }
+            else
+            {
+                tbxPass.UseSystemPasswordChar = true;
+                tbxPass.PasswordChar = '•';
+            }
         }
     }
 }
