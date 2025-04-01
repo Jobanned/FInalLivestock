@@ -41,6 +41,8 @@
             btnSearch = new Button();
             btnAdd = new Button();
             supplier = new TabPage();
+            pnlSupplier = new Panel();
+            suppliersContacts1 = new SuppliersContacts();
             pnlSearchSupplier = new Panel();
             tbxSearchSupp = new TextBox();
             button1 = new Button();
@@ -50,26 +52,24 @@
             materialButton1 = new MaterialSkin.Controls.MaterialButton();
             imageList1 = new ImageList(components);
             toolTip1 = new ToolTip(components);
-            pnlSupplier = new Panel();
-            suppliersContacts1 = new SuppliersContacts();
             materialTabControl1.SuspendLayout();
             home.SuspendLayout();
             inventory.SuspendLayout();
             pnlInventory.SuspendLayout();
             pnlSearchInventory.SuspendLayout();
             supplier.SuspendLayout();
+            pnlSupplier.SuspendLayout();
             pnlSearchSupplier.SuspendLayout();
             about.SuspendLayout();
-            pnlSupplier.SuspendLayout();
             SuspendLayout();
             // 
             // materialTabControl1
             // 
             materialTabControl1.Controls.Add(home);
             materialTabControl1.Controls.Add(inventory);
+            materialTabControl1.Controls.Add(supplier);
             materialTabControl1.Controls.Add(sales);
             materialTabControl1.Controls.Add(about);
-            materialTabControl1.Controls.Add(supplier);
             materialTabControl1.Depth = 0;
             materialTabControl1.Dock = DockStyle.Fill;
             materialTabControl1.ImageList = imageList1;
@@ -80,6 +80,7 @@
             materialTabControl1.SelectedIndex = 0;
             materialTabControl1.Size = new Size(971, 453);
             materialTabControl1.TabIndex = 0;
+            materialTabControl1.SelectedIndexChanged += materialTabControl1_SelectedIndexChanged;
             // 
             // home
             // 
@@ -196,6 +197,24 @@
             supplier.TabIndex = 2;
             supplier.Text = "Supplier";
             supplier.UseVisualStyleBackColor = true;
+            // 
+            // pnlSupplier
+            // 
+            pnlSupplier.Controls.Add(suppliersContacts1);
+            pnlSupplier.Dock = DockStyle.Fill;
+            pnlSupplier.Location = new Point(0, 47);
+            pnlSupplier.Name = "pnlSupplier";
+            pnlSupplier.Size = new Size(963, 373);
+            pnlSupplier.TabIndex = 2;
+            // 
+            // suppliersContacts1
+            // 
+            suppliersContacts1.Dock = DockStyle.Fill;
+            suppliersContacts1.Location = new Point(0, 0);
+            suppliersContacts1.Margin = new Padding(4);
+            suppliersContacts1.Name = "suppliersContacts1";
+            suppliersContacts1.Size = new Size(963, 373);
+            suppliersContacts1.TabIndex = 0;
             // 
             // pnlSearchSupplier
             // 
@@ -327,23 +346,6 @@
             // 
             toolTip1.ToolTipTitle = "Search";
             // 
-            // pnlSupplier
-            // 
-            pnlSupplier.Controls.Add(suppliersContacts1);
-            pnlSupplier.Dock = DockStyle.Fill;
-            pnlSupplier.Location = new Point(0, 47);
-            pnlSupplier.Name = "pnlSupplier";
-            pnlSupplier.Size = new Size(963, 373);
-            pnlSupplier.TabIndex = 2;
-            // 
-            // suppliersContacts1
-            // 
-            suppliersContacts1.Dock = DockStyle.Fill;
-            suppliersContacts1.Location = new Point(0, 0);
-            suppliersContacts1.Name = "suppliersContacts1";
-            suppliersContacts1.Size = new Size(963, 373);
-            suppliersContacts1.TabIndex = 0;
-            // 
             // AdminMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -363,11 +365,11 @@
             pnlSearchInventory.ResumeLayout(false);
             pnlSearchInventory.PerformLayout();
             supplier.ResumeLayout(false);
+            pnlSupplier.ResumeLayout(false);
             pnlSearchSupplier.ResumeLayout(false);
             pnlSearchSupplier.PerformLayout();
             about.ResumeLayout(false);
             about.PerformLayout();
-            pnlSupplier.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -393,8 +395,8 @@
         private Button button2;
         private ToolTip toolTip1;
         private Panel pnlInventory;
-        private AdminInventory adminInventory1;
         private Panel pnlSupplier;
+        private AdminInventory adminInventory1;
         private SuppliersContacts suppliersContacts1;
     }
 }

@@ -32,18 +32,16 @@
             label1 = new Label();
             dataGridView1 = new DataGridView();
             panel2 = new Panel();
-            label4 = new Label();
+            btnClear = new MaterialSkin.Controls.MaterialButton();
+            btnDelete = new MaterialSkin.Controls.MaterialButton();
+            btnUpdate = new MaterialSkin.Controls.MaterialButton();
+            btnAdd = new MaterialSkin.Controls.MaterialButton();
             tbxPrice = new TextBox();
             tbx = new Label();
             tbxStock = new TextBox();
             label3 = new Label();
             tbxItemName = new TextBox();
             label2 = new Label();
-            btnClear = new MaterialSkin.Controls.MaterialButton();
-            btnDelete = new MaterialSkin.Controls.MaterialButton();
-            btnUpdate = new MaterialSkin.Controls.MaterialButton();
-            btnAdd = new MaterialSkin.Controls.MaterialButton();
-            comboBox1 = new ComboBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -75,18 +73,18 @@
             dataGridView1.Dock = DockStyle.Bottom;
             dataGridView1.Location = new Point(0, 39);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(957, 149);
             dataGridView1.TabIndex = 0;
             // 
             // panel2
             // 
-            panel2.Controls.Add(comboBox1);
             panel2.Controls.Add(btnClear);
             panel2.Controls.Add(btnDelete);
             panel2.Controls.Add(btnUpdate);
             panel2.Controls.Add(btnAdd);
-            panel2.Controls.Add(label4);
             panel2.Controls.Add(tbxPrice);
             panel2.Controls.Add(tbx);
             panel2.Controls.Add(tbxStock);
@@ -99,22 +97,88 @@
             panel2.Size = new Size(957, 179);
             panel2.TabIndex = 1;
             // 
-            // label4
+            // btnClear
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(344, 97);
-            label4.Name = "label4";
-            label4.Size = new Size(69, 28);
-            label4.TabIndex = 6;
-            label4.Text = "Status:";
+            btnClear.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnClear.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnClear.Depth = 0;
+            btnClear.HighEmphasis = true;
+            btnClear.Icon = null;
+            btnClear.Location = new Point(813, 97);
+            btnClear.Margin = new Padding(4, 6, 4, 6);
+            btnClear.MouseState = MaterialSkin.MouseState.HOVER;
+            btnClear.Name = "btnClear";
+            btnClear.NoAccentTextColor = Color.Empty;
+            btnClear.Size = new Size(66, 36);
+            btnClear.TabIndex = 29;
+            btnClear.Text = "Clear";
+            btnClear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnClear.UseAccentColor = false;
+            btnClear.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            btnDelete.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnDelete.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnDelete.Depth = 0;
+            btnDelete.HighEmphasis = true;
+            btnDelete.Icon = null;
+            btnDelete.Location = new Point(695, 97);
+            btnDelete.Margin = new Padding(4, 6, 4, 6);
+            btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
+            btnDelete.Name = "btnDelete";
+            btnDelete.NoAccentTextColor = Color.Empty;
+            btnDelete.Size = new Size(73, 36);
+            btnDelete.TabIndex = 28;
+            btnDelete.Text = "Delete";
+            btnDelete.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnDelete.UseAccentColor = false;
+            btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdate
+            // 
+            btnUpdate.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnUpdate.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnUpdate.Depth = 0;
+            btnUpdate.HighEmphasis = true;
+            btnUpdate.Icon = null;
+            btnUpdate.Location = new Point(813, 44);
+            btnUpdate.Margin = new Padding(4, 6, 4, 6);
+            btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.NoAccentTextColor = Color.Empty;
+            btnUpdate.Size = new Size(77, 36);
+            btnUpdate.TabIndex = 27;
+            btnUpdate.Text = "Update";
+            btnUpdate.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnUpdate.UseAccentColor = false;
+            btnUpdate.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            btnAdd.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnAdd.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnAdd.Depth = 0;
+            btnAdd.HighEmphasis = true;
+            btnAdd.Icon = null;
+            btnAdd.Location = new Point(695, 44);
+            btnAdd.Margin = new Padding(4, 6, 4, 6);
+            btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
+            btnAdd.Name = "btnAdd";
+            btnAdd.NoAccentTextColor = Color.Empty;
+            btnAdd.Size = new Size(64, 36);
+            btnAdd.TabIndex = 26;
+            btnAdd.Text = "Add";
+            btnAdd.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnAdd.UseAccentColor = false;
+            btnAdd.UseVisualStyleBackColor = true;
             // 
             // tbxPrice
             // 
-            tbxPrice.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxPrice.Location = new Point(419, 42);
+            tbxPrice.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxPrice.Location = new Point(355, 73);
             tbxPrice.Name = "tbxPrice";
-            tbxPrice.Size = new Size(161, 34);
+            tbxPrice.Size = new Size(269, 31);
             tbxPrice.TabIndex = 5;
             // 
             // tbx
@@ -123,9 +187,9 @@
             tbx.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbx.Location = new Point(355, 42);
             tbx.Name = "tbx";
-            tbx.Size = new Size(58, 28);
+            tbx.Size = new Size(86, 28);
             tbx.TabIndex = 4;
-            tbx.Text = "Price:";
+            tbx.Text = "Address:";
             // 
             // tbxStock
             // 
@@ -163,87 +227,6 @@
             label2.TabIndex = 0;
             label2.Text = "Supplier Name:";
             // 
-            // btnClear
-            // 
-            btnClear.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnClear.Depth = 0;
-            btnClear.HighEmphasis = true;
-            btnClear.Icon = null;
-            btnClear.Location = new Point(813, 97);
-            btnClear.Margin = new Padding(4, 6, 4, 6);
-            btnClear.MouseState = MaterialSkin.MouseState.HOVER;
-            btnClear.Name = "btnClear";
-            btnClear.NoAccentTextColor = Color.Empty;
-            btnClear.Size = new Size(77, 36);
-            btnClear.TabIndex = 29;
-            btnClear.Text = "Clear";
-            btnClear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnClear.UseAccentColor = false;
-            btnClear.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            btnDelete.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnDelete.Depth = 0;
-            btnDelete.HighEmphasis = true;
-            btnDelete.Icon = null;
-            btnDelete.Location = new Point(695, 97);
-            btnDelete.Margin = new Padding(4, 6, 4, 6);
-            btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
-            btnDelete.Name = "btnDelete";
-            btnDelete.NoAccentTextColor = Color.Empty;
-            btnDelete.Size = new Size(77, 36);
-            btnDelete.TabIndex = 28;
-            btnDelete.Text = "Delete";
-            btnDelete.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnDelete.UseAccentColor = false;
-            btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdate
-            // 
-            btnUpdate.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnUpdate.Depth = 0;
-            btnUpdate.HighEmphasis = true;
-            btnUpdate.Icon = null;
-            btnUpdate.Location = new Point(813, 44);
-            btnUpdate.Margin = new Padding(4, 6, 4, 6);
-            btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.NoAccentTextColor = Color.Empty;
-            btnUpdate.Size = new Size(77, 36);
-            btnUpdate.TabIndex = 27;
-            btnUpdate.Text = "Update";
-            btnUpdate.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnUpdate.UseAccentColor = false;
-            btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            btnAdd.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnAdd.Depth = 0;
-            btnAdd.HighEmphasis = true;
-            btnAdd.Icon = null;
-            btnAdd.Location = new Point(695, 44);
-            btnAdd.Margin = new Padding(4, 6, 4, 6);
-            btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
-            btnAdd.Name = "btnAdd";
-            btnAdd.NoAccentTextColor = Color.Empty;
-            btnAdd.Size = new Size(77, 36);
-            btnAdd.TabIndex = 26;
-            btnAdd.Text = "Add";
-            btnAdd.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnAdd.UseAccentColor = false;
-            btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            comboBox1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(419, 97);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(161, 33);
-            comboBox1.TabIndex = 30;
-            // 
             // SuppliersContacts
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -270,13 +253,11 @@
         private Label label3;
         private TextBox tbxItemName;
         private Label label2;
-        private Label label4;
         private TextBox tbxPrice;
         private Label tbx;
         private MaterialSkin.Controls.MaterialButton btnClear;
         private MaterialSkin.Controls.MaterialButton btnDelete;
         private MaterialSkin.Controls.MaterialButton btnUpdate;
         private MaterialSkin.Controls.MaterialButton btnAdd;
-        private ComboBox comboBox1;
     }
 }

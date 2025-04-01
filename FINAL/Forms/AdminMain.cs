@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,11 @@ namespace Final
 {
     public partial class AdminMain : MaterialForm
     {
+        OleDbConnection? myConn;
+        OleDbDataAdapter? da;
+        OleDbCommand? cmd;
+        DataSet? ds;
+        int indexRow;
         public AdminMain()
         {
             InitializeComponent();
@@ -35,6 +41,25 @@ namespace Final
             this.Hide();
         }
 
+        private void materialTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (materialTabControl1.SelectedTab == home)
+            {
 
+            }
+            else if (materialTabControl1.SelectedTab == inventory)
+            {
+
+            }
+            else if (materialTabControl1.SelectedTab == supplier)
+            {
+    
+            }
+
+            else if (materialTabControl1.SelectedTab == sales)
+            {
+
+            }
+        }
     }
 }
