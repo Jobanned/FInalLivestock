@@ -1,6 +1,7 @@
 ﻿using FINAL;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using ReaLTaiizor.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,15 +23,8 @@ namespace Final
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.Green900, Primary.Green500, Accent.DeepOrange400, TextShade.WHITE);
-        }
-
-        private void AdminMain_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void home_Click(object sender, EventArgs e)
-        {
+            this.DoubleBuffered = true;
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint, true);
 
         }
 
@@ -41,10 +35,6 @@ namespace Final
             this.Hide();
         }
 
-        private void materialTabControl1_MouseClick(object sender, MouseEventArgs e)
-        {
 
-
-        }
     }
 }

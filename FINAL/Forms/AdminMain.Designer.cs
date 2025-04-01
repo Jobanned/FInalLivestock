@@ -34,14 +34,14 @@
             home = new TabPage();
             pnlHome = new Panel();
             inventory = new TabPage();
-            panel2 = new Panel();
-            panel1 = new Panel();
+            pnlInventory = new Panel();
+            adminInventory1 = new AdminInventory();
+            pnlSearchInventory = new Panel();
             tbxSearchInv = new TextBox();
             btnSearch = new Button();
             btnAdd = new Button();
             supplier = new TabPage();
-            panel4 = new Panel();
-            panel3 = new Panel();
+            pnlSearchSupplier = new Panel();
             tbxSearchSupp = new TextBox();
             button1 = new Button();
             button2 = new Button();
@@ -50,22 +50,26 @@
             materialButton1 = new MaterialSkin.Controls.MaterialButton();
             imageList1 = new ImageList(components);
             toolTip1 = new ToolTip(components);
+            pnlSupplier = new Panel();
+            suppliersContacts1 = new SuppliersContacts();
             materialTabControl1.SuspendLayout();
             home.SuspendLayout();
             inventory.SuspendLayout();
-            panel1.SuspendLayout();
+            pnlInventory.SuspendLayout();
+            pnlSearchInventory.SuspendLayout();
             supplier.SuspendLayout();
-            panel3.SuspendLayout();
+            pnlSearchSupplier.SuspendLayout();
             about.SuspendLayout();
+            pnlSupplier.SuspendLayout();
             SuspendLayout();
             // 
             // materialTabControl1
             // 
             materialTabControl1.Controls.Add(home);
             materialTabControl1.Controls.Add(inventory);
-            materialTabControl1.Controls.Add(supplier);
             materialTabControl1.Controls.Add(sales);
             materialTabControl1.Controls.Add(about);
+            materialTabControl1.Controls.Add(supplier);
             materialTabControl1.Depth = 0;
             materialTabControl1.Dock = DockStyle.Fill;
             materialTabControl1.ImageList = imageList1;
@@ -76,7 +80,6 @@
             materialTabControl1.SelectedIndex = 0;
             materialTabControl1.Size = new Size(971, 453);
             materialTabControl1.TabIndex = 0;
-            materialTabControl1.MouseClick += materialTabControl1_MouseClick;
             // 
             // home
             // 
@@ -90,7 +93,6 @@
             home.TabIndex = 0;
             home.Text = "Home";
             home.UseVisualStyleBackColor = true;
-            home.Click += home_Click;
             // 
             // pnlHome
             // 
@@ -102,8 +104,8 @@
             // 
             // inventory
             // 
-            inventory.Controls.Add(panel2);
-            inventory.Controls.Add(panel1);
+            inventory.Controls.Add(pnlInventory);
+            inventory.Controls.Add(pnlSearchInventory);
             inventory.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             inventory.ImageKey = "box.png";
             inventory.Location = new Point(4, 29);
@@ -114,28 +116,39 @@
             inventory.Text = "Inventory";
             inventory.UseVisualStyleBackColor = true;
             // 
-            // panel2
+            // pnlInventory
             // 
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(3, 50);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(957, 367);
-            panel2.TabIndex = 1;
+            pnlInventory.Controls.Add(adminInventory1);
+            pnlInventory.Dock = DockStyle.Fill;
+            pnlInventory.Location = new Point(3, 50);
+            pnlInventory.Name = "pnlInventory";
+            pnlInventory.Size = new Size(957, 367);
+            pnlInventory.TabIndex = 1;
             // 
-            // panel1
+            // adminInventory1
             // 
-            panel1.Controls.Add(tbxSearchInv);
-            panel1.Controls.Add(btnSearch);
-            panel1.Controls.Add(btnAdd);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(3, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(957, 47);
-            panel1.TabIndex = 0;
+            adminInventory1.AutoSize = true;
+            adminInventory1.Dock = DockStyle.Fill;
+            adminInventory1.Location = new Point(0, 0);
+            adminInventory1.Margin = new Padding(4);
+            adminInventory1.Name = "adminInventory1";
+            adminInventory1.Size = new Size(957, 367);
+            adminInventory1.TabIndex = 0;
+            // 
+            // pnlSearchInventory
+            // 
+            pnlSearchInventory.Controls.Add(tbxSearchInv);
+            pnlSearchInventory.Controls.Add(btnSearch);
+            pnlSearchInventory.Controls.Add(btnAdd);
+            pnlSearchInventory.Dock = DockStyle.Top;
+            pnlSearchInventory.Location = new Point(3, 3);
+            pnlSearchInventory.Name = "pnlSearchInventory";
+            pnlSearchInventory.Size = new Size(957, 47);
+            pnlSearchInventory.TabIndex = 0;
             // 
             // tbxSearchInv
             // 
-            tbxSearchInv.Dock = DockStyle.Fill;
+            tbxSearchInv.Dock = DockStyle.Top;
             tbxSearchInv.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbxSearchInv.Location = new Point(0, 0);
             tbxSearchInv.Name = "tbxSearchInv";
@@ -173,8 +186,8 @@
             // 
             // supplier
             // 
-            supplier.Controls.Add(panel4);
-            supplier.Controls.Add(panel3);
+            supplier.Controls.Add(pnlSupplier);
+            supplier.Controls.Add(pnlSearchSupplier);
             supplier.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             supplier.ImageKey = "distribution.png";
             supplier.Location = new Point(4, 29);
@@ -184,24 +197,16 @@
             supplier.Text = "Supplier";
             supplier.UseVisualStyleBackColor = true;
             // 
-            // panel4
+            // pnlSearchSupplier
             // 
-            panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(0, 47);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(963, 373);
-            panel4.TabIndex = 2;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(tbxSearchSupp);
-            panel3.Controls.Add(button1);
-            panel3.Controls.Add(button2);
-            panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(0, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(963, 47);
-            panel3.TabIndex = 1;
+            pnlSearchSupplier.Controls.Add(tbxSearchSupp);
+            pnlSearchSupplier.Controls.Add(button1);
+            pnlSearchSupplier.Controls.Add(button2);
+            pnlSearchSupplier.Dock = DockStyle.Top;
+            pnlSearchSupplier.Location = new Point(0, 0);
+            pnlSearchSupplier.Name = "pnlSearchSupplier";
+            pnlSearchSupplier.Size = new Size(963, 47);
+            pnlSearchSupplier.TabIndex = 1;
             // 
             // tbxSearchSupp
             // 
@@ -209,7 +214,7 @@
             tbxSearchSupp.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbxSearchSupp.Location = new Point(0, 0);
             tbxSearchSupp.Name = "tbxSearchSupp";
-            tbxSearchSupp.PlaceholderText = "Search Item";
+            tbxSearchSupp.PlaceholderText = "Search Supplier";
             tbxSearchSupp.Size = new Size(845, 51);
             tbxSearchSupp.TabIndex = 5;
             // 
@@ -322,6 +327,23 @@
             // 
             toolTip1.ToolTipTitle = "Search";
             // 
+            // pnlSupplier
+            // 
+            pnlSupplier.Controls.Add(suppliersContacts1);
+            pnlSupplier.Dock = DockStyle.Fill;
+            pnlSupplier.Location = new Point(0, 47);
+            pnlSupplier.Name = "pnlSupplier";
+            pnlSupplier.Size = new Size(963, 373);
+            pnlSupplier.TabIndex = 2;
+            // 
+            // suppliersContacts1
+            // 
+            suppliersContacts1.Dock = DockStyle.Fill;
+            suppliersContacts1.Location = new Point(0, 0);
+            suppliersContacts1.Name = "suppliersContacts1";
+            suppliersContacts1.Size = new Size(963, 373);
+            suppliersContacts1.TabIndex = 0;
+            // 
             // AdminMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -333,17 +355,19 @@
             Name = "AdminMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Hello Admin!";
-            Load += AdminMain_Load;
             materialTabControl1.ResumeLayout(false);
             home.ResumeLayout(false);
             inventory.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            pnlInventory.ResumeLayout(false);
+            pnlInventory.PerformLayout();
+            pnlSearchInventory.ResumeLayout(false);
+            pnlSearchInventory.PerformLayout();
             supplier.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            pnlSearchSupplier.ResumeLayout(false);
+            pnlSearchSupplier.PerformLayout();
             about.ResumeLayout(false);
             about.PerformLayout();
+            pnlSupplier.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -359,16 +383,18 @@
         private TabPage about;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private Panel pnlHome;
-        private Panel panel2;
-        private Panel panel1;
+        private Panel pnlSearchInventory;
         private Button btnAdd;
         private TextBox tbxSearchInv;
         private Button btnSearch;
-        private Panel panel4;
-        private Panel panel3;
+        private Panel pnlSearchSupplier;
         private TextBox tbxSearchSupp;
         private Button button1;
         private Button button2;
         private ToolTip toolTip1;
+        private Panel pnlInventory;
+        private AdminInventory adminInventory1;
+        private Panel pnlSupplier;
+        private SuppliersContacts suppliersContacts1;
     }
 }
