@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewPass));
             panel1 = new Panel();
             parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            checkBox1 = new CheckBox();
             label4 = new Label();
             label1 = new Label();
             tbxNewPass = new TextBox();
@@ -41,7 +42,6 @@
             label2 = new Label();
             btnContinue = new Button();
             lnklblLogin = new LinkLabel();
-            checkBox1 = new CheckBox();
             panel1.SuspendLayout();
             parrotGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -87,6 +87,19 @@
             parrotGradientPanel1.TopLeft = Color.FromArgb(240, 231, 213);
             parrotGradientPanel1.TopRight = Color.FromArgb(156, 188, 95);
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.BackColor = Color.Transparent;
+            checkBox1.ForeColor = Color.Transparent;
+            checkBox1.Location = new Point(259, 314);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(132, 24);
+            checkBox1.TabIndex = 76;
+            checkBox1.Text = "Show Password";
+            checkBox1.UseVisualStyleBackColor = false;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -121,6 +134,7 @@
             tbxNewPass.PasswordChar = '*';
             tbxNewPass.Size = new Size(305, 46);
             tbxNewPass.TabIndex = 73;
+            tbxNewPass.TextChanged += tbxNewPass_TextChanged;
             // 
             // tbxPass
             // 
@@ -205,19 +219,6 @@
             lnklblLogin.TabIndex = 51;
             lnklblLogin.TabStop = true;
             lnklblLogin.Text = "Back to Login";
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.BackColor = Color.Transparent;
-            checkBox1.ForeColor = Color.Transparent;
-            checkBox1.Location = new Point(259, 314);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(132, 24);
-            checkBox1.TabIndex = 76;
-            checkBox1.Text = "Show Password";
-            checkBox1.UseVisualStyleBackColor = false;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // NewPass
             // 

@@ -1,4 +1,5 @@
-﻿using MaterialSkin;
+﻿using FINAL;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,19 @@ namespace Final
 
         private void home_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
+
+        private void materialTabControl1_MouseClick(object sender, MouseEventArgs e)
+        {
+
 
         }
     }

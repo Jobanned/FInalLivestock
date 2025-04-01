@@ -32,18 +32,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerMain));
             materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             Shop = new TabPage();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            panelSearch = new Panel();
             Cart = new TabPage();
+            flowLayoutPanel2 = new FlowLayoutPanel();
             Checkout = new TabPage();
+            flowLayoutPanel3 = new FlowLayoutPanel();
             Account = new TabPage();
             imageList1 = new ImageList(components);
-            panelSearch = new Panel();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            flowLayoutPanel2 = new FlowLayoutPanel();
-            flowLayoutPanel3 = new FlowLayoutPanel();
+            materialButton1 = new MaterialSkin.Controls.MaterialButton();
             materialTabControl1.SuspendLayout();
             Shop.SuspendLayout();
             Cart.SuspendLayout();
             Checkout.SuspendLayout();
+            Account.SuspendLayout();
             SuspendLayout();
             // 
             // materialTabControl1
@@ -77,6 +79,22 @@
             Shop.Text = "Shop";
             Shop.UseVisualStyleBackColor = true;
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Dock = DockStyle.Fill;
+            flowLayoutPanel1.Location = new Point(3, 36);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(957, 381);
+            flowLayoutPanel1.TabIndex = 1;
+            // 
+            // panelSearch
+            // 
+            panelSearch.Dock = DockStyle.Top;
+            panelSearch.Location = new Point(3, 3);
+            panelSearch.Name = "panelSearch";
+            panelSearch.Size = new Size(957, 33);
+            panelSearch.TabIndex = 0;
+            // 
             // Cart
             // 
             Cart.Controls.Add(flowLayoutPanel2);
@@ -85,10 +103,18 @@
             Cart.Location = new Point(4, 29);
             Cart.Name = "Cart";
             Cart.Padding = new Padding(3);
-            Cart.Size = new Size(786, 350);
+            Cart.Size = new Size(963, 420);
             Cart.TabIndex = 1;
             Cart.Text = "Cart";
             Cart.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel2
+            // 
+            flowLayoutPanel2.Dock = DockStyle.Fill;
+            flowLayoutPanel2.Location = new Point(3, 3);
+            flowLayoutPanel2.Name = "flowLayoutPanel2";
+            flowLayoutPanel2.Size = new Size(957, 414);
+            flowLayoutPanel2.TabIndex = 0;
             // 
             // Checkout
             // 
@@ -97,18 +123,27 @@
             Checkout.ImageKey = "shopping-bag.png";
             Checkout.Location = new Point(4, 29);
             Checkout.Name = "Checkout";
-            Checkout.Size = new Size(786, 350);
+            Checkout.Size = new Size(963, 420);
             Checkout.TabIndex = 2;
             Checkout.Text = "Checkout";
             Checkout.UseVisualStyleBackColor = true;
             // 
+            // flowLayoutPanel3
+            // 
+            flowLayoutPanel3.Dock = DockStyle.Fill;
+            flowLayoutPanel3.Location = new Point(0, 0);
+            flowLayoutPanel3.Name = "flowLayoutPanel3";
+            flowLayoutPanel3.Size = new Size(963, 420);
+            flowLayoutPanel3.TabIndex = 0;
+            // 
             // Account
             // 
+            Account.Controls.Add(materialButton1);
             Account.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Account.ImageKey = "user.png";
             Account.Location = new Point(4, 29);
             Account.Name = "Account";
-            Account.Size = new Size(786, 350);
+            Account.Size = new Size(963, 420);
             Account.TabIndex = 3;
             Account.Text = "Account";
             Account.UseVisualStyleBackColor = true;
@@ -145,37 +180,25 @@
             imageList1.Images.SetKeyName(24, "user.png");
             imageList1.Images.SetKeyName(25, "user32.png");
             // 
-            // panelSearch
+            // materialButton1
             // 
-            panelSearch.Dock = DockStyle.Top;
-            panelSearch.Location = new Point(3, 3);
-            panelSearch.Name = "panelSearch";
-            panelSearch.Size = new Size(957, 33);
-            panelSearch.TabIndex = 0;
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Location = new Point(3, 36);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(957, 381);
-            flowLayoutPanel1.TabIndex = 1;
-            // 
-            // flowLayoutPanel2
-            // 
-            flowLayoutPanel2.Dock = DockStyle.Fill;
-            flowLayoutPanel2.Location = new Point(3, 3);
-            flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(780, 344);
-            flowLayoutPanel2.TabIndex = 0;
-            // 
-            // flowLayoutPanel3
-            // 
-            flowLayoutPanel3.Dock = DockStyle.Fill;
-            flowLayoutPanel3.Location = new Point(0, 0);
-            flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new Size(786, 350);
-            flowLayoutPanel3.TabIndex = 0;
+            materialButton1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            materialButton1.Depth = 0;
+            materialButton1.HighEmphasis = true;
+            materialButton1.Icon = null;
+            materialButton1.Location = new Point(437, 357);
+            materialButton1.Margin = new Padding(4, 6, 4, 6);
+            materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialButton1.Name = "materialButton1";
+            materialButton1.NoAccentTextColor = Color.Empty;
+            materialButton1.Size = new Size(82, 36);
+            materialButton1.TabIndex = 1;
+            materialButton1.Text = "Log Out";
+            materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            materialButton1.UseAccentColor = false;
+            materialButton1.UseVisualStyleBackColor = true;
+            materialButton1.Click += materialButton1_Click;
             // 
             // CustomerMain
             // 
@@ -193,6 +216,8 @@
             Shop.ResumeLayout(false);
             Cart.ResumeLayout(false);
             Checkout.ResumeLayout(false);
+            Account.ResumeLayout(false);
+            Account.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -208,5 +233,6 @@
         private Panel panelSearch;
         private FlowLayoutPanel flowLayoutPanel2;
         private FlowLayoutPanel flowLayoutPanel3;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
     }
 }

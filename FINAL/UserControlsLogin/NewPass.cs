@@ -25,7 +25,7 @@ namespace Final
         {
             InitializeComponent();
             Email = UserEmail;
-           
+
         }
 
         private void btnContinue_Click(object sender, EventArgs e)
@@ -86,6 +86,11 @@ namespace Final
                 }
                 return builder.ToString();
             }
+        }
+
+        private void tbxNewPass_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

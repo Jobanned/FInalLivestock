@@ -171,8 +171,9 @@ namespace Final
         private void lnklblLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Login login = new Login();
-            login.Show();
             this.Hide();
+            login.ShowDialog();
+            return;
         }
     }
 }

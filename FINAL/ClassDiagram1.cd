@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Final.Properties.Resources" Collapsed="true">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.AdminMain" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAGAAAAAEAACBAAACAAAAAAAHAAAAAAAAAAA=</HashCode>
+      <FileName>Forms\AdminMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.CreateAccount" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>0MAgIhABASAEARSQIgCARAACQIAAAEAAJAACAQBBAAA=</HashCode>
+      <FileName>Forms\CreateAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.CustomerMain" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAGAABAAAAACAAAACAICTAAAAAAAACAAAAEA=</HashCode>
+      <FileName>Forms\CustomerMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.ForgotPassword" Collapsed="true">
+    <Position X="3.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAABAAACAAEBEAAACBAAACQAAAAAAAIAAAAQAAAAA=</HashCode>
+      <FileName>Forms\ForgotPassword.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.Login" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgABEAASAFABQQAASgAAACQIAgCEAAIIACAwBAAAA=</HashCode>
+      <FileName>Forms\Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.NewPass" Collapsed="true">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAgAgABASAEABWAAACARAACAIAAAAAAAAACAQEAAAA=</HashCode>
+      <FileName>UserControlsLogin\NewPass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.OTP" Collapsed="true">
+    <Position X="3.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAJBIBAGAAsB2AJACAAAASAgAQAAAAAABACUAABAA=</HashCode>
+      <FileName>UserControlsLogin\OTP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.Items" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAABBAAAACAAAACAAAYAAAAEAAAAQAAAAA=</HashCode>
+      <FileName>Items.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.Program" Collapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FINAL.AccountInfo" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAACAAIRFAAACgBAACAACACAAAAAAAIABAAAA=</HashCode>
+      <FileName>UserControlsLogin\AccountInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
