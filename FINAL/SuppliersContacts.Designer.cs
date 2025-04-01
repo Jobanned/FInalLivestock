@@ -30,27 +30,28 @@
         {
             panel1 = new Panel();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
+            dgvSuppliers = new DataGridView();
             panel2 = new Panel();
+            btnLoad = new MaterialSkin.Controls.MaterialButton();
             btnClear = new MaterialSkin.Controls.MaterialButton();
             btnDelete = new MaterialSkin.Controls.MaterialButton();
             btnUpdate = new MaterialSkin.Controls.MaterialButton();
             btnAdd = new MaterialSkin.Controls.MaterialButton();
-            tbxPrice = new TextBox();
+            tbxAddress = new TextBox();
             tbx = new Label();
-            tbxStock = new TextBox();
+            tbxPhone = new TextBox();
             label3 = new Label();
-            tbxItemName = new TextBox();
+            tbxSupplierName = new TextBox();
             label2 = new Label();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSuppliers).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(dataGridView1);
+            panel1.Controls.Add(dgvSuppliers);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -67,35 +68,57 @@
             label1.TabIndex = 1;
             label1.Text = "List of Suppliers";
             // 
-            // dataGridView1
+            // dgvSuppliers
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Bottom;
-            dataGridView1.Location = new Point(0, 39);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(957, 149);
-            dataGridView1.TabIndex = 0;
+            dgvSuppliers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSuppliers.Dock = DockStyle.Bottom;
+            dgvSuppliers.Location = new Point(0, 39);
+            dgvSuppliers.Name = "dgvSuppliers";
+            dgvSuppliers.ReadOnly = true;
+            dgvSuppliers.RowHeadersWidth = 51;
+            dgvSuppliers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvSuppliers.Size = new Size(957, 149);
+            dgvSuppliers.TabIndex = 0;
+            dgvSuppliers.CellClick += dgvSuppliers_CellClick;
             // 
             // panel2
             // 
+            panel2.Controls.Add(btnLoad);
             panel2.Controls.Add(btnClear);
             panel2.Controls.Add(btnDelete);
             panel2.Controls.Add(btnUpdate);
             panel2.Controls.Add(btnAdd);
-            panel2.Controls.Add(tbxPrice);
+            panel2.Controls.Add(tbxAddress);
             panel2.Controls.Add(tbx);
-            panel2.Controls.Add(tbxStock);
+            panel2.Controls.Add(tbxPhone);
             panel2.Controls.Add(label3);
-            panel2.Controls.Add(tbxItemName);
+            panel2.Controls.Add(tbxSupplierName);
             panel2.Controls.Add(label2);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 188);
             panel2.Name = "panel2";
             panel2.Size = new Size(957, 179);
             panel2.TabIndex = 1;
+            // 
+            // btnLoad
+            // 
+            btnLoad.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnLoad.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnLoad.Depth = 0;
+            btnLoad.HighEmphasis = true;
+            btnLoad.Icon = null;
+            btnLoad.Location = new Point(28, 9);
+            btnLoad.Margin = new Padding(4, 6, 4, 6);
+            btnLoad.MouseState = MaterialSkin.MouseState.HOVER;
+            btnLoad.Name = "btnLoad";
+            btnLoad.NoAccentTextColor = Color.Empty;
+            btnLoad.Size = new Size(103, 36);
+            btnLoad.TabIndex = 30;
+            btnLoad.Text = "VIEW ITEMS";
+            btnLoad.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnLoad.UseAccentColor = false;
+            btnLoad.UseVisualStyleBackColor = true;
+            btnLoad.Click += btnLoad_Click;
             // 
             // btnClear
             // 
@@ -104,7 +127,7 @@
             btnClear.Depth = 0;
             btnClear.HighEmphasis = true;
             btnClear.Icon = null;
-            btnClear.Location = new Point(813, 97);
+            btnClear.Location = new Point(562, 9);
             btnClear.Margin = new Padding(4, 6, 4, 6);
             btnClear.MouseState = MaterialSkin.MouseState.HOVER;
             btnClear.Name = "btnClear";
@@ -115,6 +138,7 @@
             btnClear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btnClear.UseAccentColor = false;
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnDelete
             // 
@@ -123,7 +147,7 @@
             btnDelete.Depth = 0;
             btnDelete.HighEmphasis = true;
             btnDelete.Icon = null;
-            btnDelete.Location = new Point(695, 97);
+            btnDelete.Location = new Point(426, 9);
             btnDelete.Margin = new Padding(4, 6, 4, 6);
             btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
             btnDelete.Name = "btnDelete";
@@ -134,6 +158,7 @@
             btnDelete.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btnDelete.UseAccentColor = false;
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnUpdate
             // 
@@ -142,7 +167,7 @@
             btnUpdate.Depth = 0;
             btnUpdate.HighEmphasis = true;
             btnUpdate.Icon = null;
-            btnUpdate.Location = new Point(813, 44);
+            btnUpdate.Location = new Point(288, 9);
             btnUpdate.Margin = new Padding(4, 6, 4, 6);
             btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
             btnUpdate.Name = "btnUpdate";
@@ -161,7 +186,7 @@
             btnAdd.Depth = 0;
             btnAdd.HighEmphasis = true;
             btnAdd.Icon = null;
-            btnAdd.Location = new Point(695, 44);
+            btnAdd.Location = new Point(175, 9);
             btnAdd.Margin = new Padding(4, 6, 4, 6);
             btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             btnAdd.Name = "btnAdd";
@@ -172,56 +197,57 @@
             btnAdd.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btnAdd.UseAccentColor = false;
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
-            // tbxPrice
+            // tbxAddress
             // 
-            tbxPrice.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxPrice.Location = new Point(355, 73);
-            tbxPrice.Name = "tbxPrice";
-            tbxPrice.Size = new Size(269, 31);
-            tbxPrice.TabIndex = 5;
+            tbxAddress.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxAddress.Location = new Point(359, 105);
+            tbxAddress.Name = "tbxAddress";
+            tbxAddress.Size = new Size(269, 31);
+            tbxAddress.TabIndex = 5;
             // 
             // tbx
             // 
             tbx.AutoSize = true;
             tbx.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbx.Location = new Point(355, 42);
+            tbx.Location = new Point(359, 74);
             tbx.Name = "tbx";
             tbx.Size = new Size(86, 28);
             tbx.TabIndex = 4;
             tbx.Text = "Address:";
             // 
-            // tbxStock
+            // tbxPhone
             // 
-            tbxStock.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxStock.Location = new Point(155, 94);
-            tbxStock.Name = "tbxStock";
-            tbxStock.Size = new Size(161, 34);
-            tbxStock.TabIndex = 3;
+            tbxPhone.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxPhone.Location = new Point(159, 126);
+            tbxPhone.Name = "tbxPhone";
+            tbxPhone.Size = new Size(161, 34);
+            tbxPhone.TabIndex = 3;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(1, 97);
+            label3.Location = new Point(5, 129);
             label3.Name = "label3";
             label3.Size = new Size(148, 28);
             label3.TabIndex = 2;
             label3.Text = "Phone Number:";
             // 
-            // tbxItemName
+            // tbxSupplierName
             // 
-            tbxItemName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxItemName.Location = new Point(155, 42);
-            tbxItemName.Name = "tbxItemName";
-            tbxItemName.Size = new Size(161, 34);
-            tbxItemName.TabIndex = 1;
+            tbxSupplierName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxSupplierName.Location = new Point(159, 74);
+            tbxSupplierName.Name = "tbxSupplierName";
+            tbxSupplierName.Size = new Size(161, 34);
+            tbxSupplierName.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(3, 42);
+            label2.Location = new Point(7, 74);
             label2.Name = "label2";
             label2.Size = new Size(146, 28);
             label2.TabIndex = 0;
@@ -237,7 +263,7 @@
             Size = new Size(957, 367);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSuppliers).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -247,17 +273,18 @@
 
         private Panel panel1;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvSuppliers;
         private Panel panel2;
-        private TextBox tbxStock;
+        private TextBox tbxPhone;
         private Label label3;
-        private TextBox tbxItemName;
+        private TextBox tbxSupplierName;
         private Label label2;
-        private TextBox tbxPrice;
+        private TextBox tbxAddress;
         private Label tbx;
         private MaterialSkin.Controls.MaterialButton btnClear;
         private MaterialSkin.Controls.MaterialButton btnDelete;
         private MaterialSkin.Controls.MaterialButton btnUpdate;
         private MaterialSkin.Controls.MaterialButton btnAdd;
+        private MaterialSkin.Controls.MaterialButton btnLoad;
     }
 }

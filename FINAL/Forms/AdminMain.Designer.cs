@@ -36,17 +36,9 @@
             inventory = new TabPage();
             pnlInventory = new Panel();
             adminInventory1 = new AdminInventory();
-            pnlSearchInventory = new Panel();
-            tbxSearchInv = new TextBox();
-            btnSearch = new Button();
-            btnAdd = new Button();
             supplier = new TabPage();
             pnlSupplier = new Panel();
             suppliersContacts1 = new SuppliersContacts();
-            pnlSearchSupplier = new Panel();
-            tbxSearchSupp = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
             sales = new TabPage();
             about = new TabPage();
             materialButton1 = new MaterialSkin.Controls.MaterialButton();
@@ -56,10 +48,8 @@
             home.SuspendLayout();
             inventory.SuspendLayout();
             pnlInventory.SuspendLayout();
-            pnlSearchInventory.SuspendLayout();
             supplier.SuspendLayout();
             pnlSupplier.SuspendLayout();
-            pnlSearchSupplier.SuspendLayout();
             about.SuspendLayout();
             SuspendLayout();
             // 
@@ -106,7 +96,6 @@
             // inventory
             // 
             inventory.Controls.Add(pnlInventory);
-            inventory.Controls.Add(pnlSearchInventory);
             inventory.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             inventory.ImageKey = "box.png";
             inventory.Location = new Point(4, 29);
@@ -121,9 +110,9 @@
             // 
             pnlInventory.Controls.Add(adminInventory1);
             pnlInventory.Dock = DockStyle.Fill;
-            pnlInventory.Location = new Point(3, 50);
+            pnlInventory.Location = new Point(3, 3);
             pnlInventory.Name = "pnlInventory";
-            pnlInventory.Size = new Size(957, 367);
+            pnlInventory.Size = new Size(957, 414);
             pnlInventory.TabIndex = 1;
             // 
             // adminInventory1
@@ -133,62 +122,12 @@
             adminInventory1.Location = new Point(0, 0);
             adminInventory1.Margin = new Padding(4);
             adminInventory1.Name = "adminInventory1";
-            adminInventory1.Size = new Size(957, 367);
+            adminInventory1.Size = new Size(957, 414);
             adminInventory1.TabIndex = 0;
-            // 
-            // pnlSearchInventory
-            // 
-            pnlSearchInventory.Controls.Add(tbxSearchInv);
-            pnlSearchInventory.Controls.Add(btnSearch);
-            pnlSearchInventory.Controls.Add(btnAdd);
-            pnlSearchInventory.Dock = DockStyle.Top;
-            pnlSearchInventory.Location = new Point(3, 3);
-            pnlSearchInventory.Name = "pnlSearchInventory";
-            pnlSearchInventory.Size = new Size(957, 47);
-            pnlSearchInventory.TabIndex = 0;
-            // 
-            // tbxSearchInv
-            // 
-            tbxSearchInv.Dock = DockStyle.Top;
-            tbxSearchInv.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxSearchInv.Location = new Point(0, 0);
-            tbxSearchInv.Name = "tbxSearchInv";
-            tbxSearchInv.PlaceholderText = "Search Item";
-            tbxSearchInv.Size = new Size(839, 51);
-            tbxSearchInv.TabIndex = 5;
-            // 
-            // btnSearch
-            // 
-            btnSearch.BackgroundImage = (Image)resources.GetObject("btnSearch.BackgroundImage");
-            btnSearch.BackgroundImageLayout = ImageLayout.Zoom;
-            btnSearch.Dock = DockStyle.Right;
-            btnSearch.FlatAppearance.BorderSize = 0;
-            btnSearch.FlatStyle = FlatStyle.Flat;
-            btnSearch.Location = new Point(839, 0);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(59, 47);
-            btnSearch.TabIndex = 4;
-            toolTip1.SetToolTip(btnSearch, "Search");
-            btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            btnAdd.BackgroundImage = (Image)resources.GetObject("btnAdd.BackgroundImage");
-            btnAdd.BackgroundImageLayout = ImageLayout.Zoom;
-            btnAdd.Dock = DockStyle.Right;
-            btnAdd.FlatAppearance.BorderSize = 0;
-            btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.Location = new Point(898, 0);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(59, 47);
-            btnAdd.TabIndex = 3;
-            toolTip1.SetToolTip(btnAdd, "Add Item");
-            btnAdd.UseVisualStyleBackColor = true;
             // 
             // supplier
             // 
             supplier.Controls.Add(pnlSupplier);
-            supplier.Controls.Add(pnlSearchSupplier);
             supplier.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             supplier.ImageKey = "distribution.png";
             supplier.Location = new Point(4, 29);
@@ -202,9 +141,9 @@
             // 
             pnlSupplier.Controls.Add(suppliersContacts1);
             pnlSupplier.Dock = DockStyle.Fill;
-            pnlSupplier.Location = new Point(0, 47);
+            pnlSupplier.Location = new Point(0, 0);
             pnlSupplier.Name = "pnlSupplier";
-            pnlSupplier.Size = new Size(963, 373);
+            pnlSupplier.Size = new Size(963, 420);
             pnlSupplier.TabIndex = 2;
             // 
             // suppliersContacts1
@@ -213,59 +152,8 @@
             suppliersContacts1.Location = new Point(0, 0);
             suppliersContacts1.Margin = new Padding(4);
             suppliersContacts1.Name = "suppliersContacts1";
-            suppliersContacts1.Size = new Size(963, 373);
+            suppliersContacts1.Size = new Size(963, 420);
             suppliersContacts1.TabIndex = 0;
-            // 
-            // pnlSearchSupplier
-            // 
-            pnlSearchSupplier.Controls.Add(tbxSearchSupp);
-            pnlSearchSupplier.Controls.Add(button1);
-            pnlSearchSupplier.Controls.Add(button2);
-            pnlSearchSupplier.Dock = DockStyle.Top;
-            pnlSearchSupplier.Location = new Point(0, 0);
-            pnlSearchSupplier.Name = "pnlSearchSupplier";
-            pnlSearchSupplier.Size = new Size(963, 47);
-            pnlSearchSupplier.TabIndex = 1;
-            // 
-            // tbxSearchSupp
-            // 
-            tbxSearchSupp.Dock = DockStyle.Fill;
-            tbxSearchSupp.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxSearchSupp.Location = new Point(0, 0);
-            tbxSearchSupp.Name = "tbxSearchSupp";
-            tbxSearchSupp.PlaceholderText = "Search Supplier";
-            tbxSearchSupp.Size = new Size(845, 51);
-            tbxSearchSupp.TabIndex = 5;
-            // 
-            // button1
-            // 
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.BackgroundImageLayout = ImageLayout.Zoom;
-            button1.Dock = DockStyle.Right;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(845, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(59, 47);
-            button1.TabIndex = 4;
-            button1.Tag = "";
-            button1.TextImageRelation = TextImageRelation.TextBeforeImage;
-            toolTip1.SetToolTip(button1, "Search");
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-            button2.BackgroundImageLayout = ImageLayout.Zoom;
-            button2.Dock = DockStyle.Right;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(904, 0);
-            button2.Name = "button2";
-            button2.Size = new Size(59, 47);
-            button2.TabIndex = 3;
-            toolTip1.SetToolTip(button2, "Add Item");
-            button2.UseVisualStyleBackColor = true;
             // 
             // sales
             // 
@@ -362,12 +250,8 @@
             inventory.ResumeLayout(false);
             pnlInventory.ResumeLayout(false);
             pnlInventory.PerformLayout();
-            pnlSearchInventory.ResumeLayout(false);
-            pnlSearchInventory.PerformLayout();
             supplier.ResumeLayout(false);
             pnlSupplier.ResumeLayout(false);
-            pnlSearchSupplier.ResumeLayout(false);
-            pnlSearchSupplier.PerformLayout();
             about.ResumeLayout(false);
             about.PerformLayout();
             ResumeLayout(false);
@@ -385,14 +269,6 @@
         private TabPage about;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private Panel pnlHome;
-        private Panel pnlSearchInventory;
-        private Button btnAdd;
-        private TextBox tbxSearchInv;
-        private Button btnSearch;
-        private Panel pnlSearchSupplier;
-        private TextBox tbxSearchSupp;
-        private Button button1;
-        private Button button2;
         private ToolTip toolTip1;
         private Panel pnlInventory;
         private Panel pnlSupplier;

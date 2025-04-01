@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminInventory));
             panel1 = new Panel();
+            btnLoad = new MaterialSkin.Controls.MaterialButton();
             cbxStatus = new ComboBox();
             cbxType = new ComboBox();
             btnImportPhoto = new MaterialSkin.Controls.MaterialButton();
@@ -44,7 +45,6 @@
             label3 = new Label();
             tbxStock = new TextBox();
             panel2 = new Panel();
-            btnLoad = new MaterialSkin.Controls.MaterialButton();
             dgvInventory = new DataGridView();
             btnClear = new MaterialSkin.Controls.MaterialButton();
             btnDelete = new MaterialSkin.Controls.MaterialButton();
@@ -59,6 +59,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnLoad);
             panel1.Controls.Add(cbxStatus);
             panel1.Controls.Add(cbxType);
             panel1.Controls.Add(btnImportPhoto);
@@ -74,8 +75,28 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(403, 367);
+            panel1.Size = new Size(403, 414);
             panel1.TabIndex = 0;
+            // 
+            // btnLoad
+            // 
+            btnLoad.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnLoad.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnLoad.Depth = 0;
+            btnLoad.HighEmphasis = true;
+            btnLoad.Icon = null;
+            btnLoad.Location = new Point(139, 360);
+            btnLoad.Margin = new Padding(4, 6, 4, 6);
+            btnLoad.MouseState = MaterialSkin.MouseState.HOVER;
+            btnLoad.Name = "btnLoad";
+            btnLoad.NoAccentTextColor = Color.Empty;
+            btnLoad.Size = new Size(103, 36);
+            btnLoad.TabIndex = 27;
+            btnLoad.Text = "VIEW ITEMS";
+            btnLoad.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnLoad.UseAccentColor = false;
+            btnLoad.UseVisualStyleBackColor = true;
+            btnLoad.Click += btnLoad_Click;
             // 
             // cbxStatus
             // 
@@ -215,7 +236,6 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(btnLoad);
             panel2.Controls.Add(dgvInventory);
             panel2.Controls.Add(btnClear);
             panel2.Controls.Add(btnDelete);
@@ -224,28 +244,8 @@
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(403, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(554, 367);
+            panel2.Size = new Size(554, 414);
             panel2.TabIndex = 1;
-            // 
-            // btnLoad
-            // 
-            btnLoad.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnLoad.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnLoad.Depth = 0;
-            btnLoad.HighEmphasis = true;
-            btnLoad.Icon = null;
-            btnLoad.Location = new Point(27, 287);
-            btnLoad.Margin = new Padding(4, 6, 4, 6);
-            btnLoad.MouseState = MaterialSkin.MouseState.HOVER;
-            btnLoad.Name = "btnLoad";
-            btnLoad.NoAccentTextColor = Color.Empty;
-            btnLoad.Size = new Size(64, 36);
-            btnLoad.TabIndex = 27;
-            btnLoad.Text = "Load";
-            btnLoad.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnLoad.UseAccentColor = false;
-            btnLoad.UseVisualStyleBackColor = true;
-            btnLoad.Click += btnLoad_Click;
             // 
             // dgvInventory
             // 
@@ -253,9 +253,11 @@
             dgvInventory.Dock = DockStyle.Top;
             dgvInventory.Location = new Point(0, 0);
             dgvInventory.Name = "dgvInventory";
+            dgvInventory.ReadOnly = true;
             dgvInventory.RowHeadersWidth = 51;
             dgvInventory.Size = new Size(554, 266);
             dgvInventory.TabIndex = 26;
+            dgvInventory.CellClick += dgvInventory_CellClick;
             // 
             // btnClear
             // 
@@ -264,7 +266,7 @@
             btnClear.Depth = 0;
             btnClear.HighEmphasis = true;
             btnClear.Icon = null;
-            btnClear.Location = new Point(458, 287);
+            btnClear.Location = new Point(402, 298);
             btnClear.Margin = new Padding(4, 6, 4, 6);
             btnClear.MouseState = MaterialSkin.MouseState.HOVER;
             btnClear.Name = "btnClear";
@@ -284,7 +286,7 @@
             btnDelete.Depth = 0;
             btnDelete.HighEmphasis = true;
             btnDelete.Icon = null;
-            btnDelete.Location = new Point(344, 287);
+            btnDelete.Location = new Point(272, 298);
             btnDelete.Margin = new Padding(4, 6, 4, 6);
             btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
             btnDelete.Name = "btnDelete";
@@ -295,6 +297,7 @@
             btnDelete.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btnDelete.UseAccentColor = false;
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnUpdate
             // 
@@ -303,7 +306,7 @@
             btnUpdate.Depth = 0;
             btnUpdate.HighEmphasis = true;
             btnUpdate.Icon = null;
-            btnUpdate.Location = new Point(234, 287);
+            btnUpdate.Location = new Point(139, 298);
             btnUpdate.Margin = new Padding(4, 6, 4, 6);
             btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
             btnUpdate.Name = "btnUpdate";
@@ -323,7 +326,7 @@
             btnAdd.Depth = 0;
             btnAdd.HighEmphasis = true;
             btnAdd.Icon = null;
-            btnAdd.Location = new Point(133, 287);
+            btnAdd.Location = new Point(17, 298);
             btnAdd.Margin = new Padding(4, 6, 4, 6);
             btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             btnAdd.Name = "btnAdd";
@@ -344,7 +347,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "AdminInventory";
-            Size = new Size(957, 367);
+            Size = new Size(957, 414);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);

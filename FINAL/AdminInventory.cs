@@ -39,7 +39,7 @@ namespace Final
         {
             myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb");
             da = new OleDbDataAdapter("SELECT *FROM Inventory", myConn);
-            string query = "Insert into Account ([ItemName], [Quantity], [Price], [FeedType], [Status], [Image]) values (@itemname, @quantity, @price, @feedtype, @status, @image)";
+            string query = "Insert into Inventory ([Item], [Quantity], [Price], [FeedType], [Status], [Image]) values (@itemname, @quantity, @price, @feedtype, @status, @image)";
             myConn.Open();
             if (tbxItemName.Text == string.Empty || tbxStock.Text == string.Empty || tbxPrice.Text == string.Empty)
             {
@@ -76,6 +76,7 @@ namespace Final
             cmd.ExecuteNonQuery();
             myConn.Close();
             MessageBox.Show("Item added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnLoad_Click(sender, e);
         }
 
         private void btnImportPhoto_Click(object sender, EventArgs e)
@@ -123,19 +124,18 @@ namespace Final
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (emptyFields())
-            {
-                MessageBox.Show("Please fill out all fields.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                DialogResult check = MessageBox.Show("Are you sure you want to update this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (check == DialogResult.Yes)
-                {
-                    MessageBox.Show("Item updated successfully.", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clearFields();
-                }
-            }
+            string query = "UPDATE [Inventory] SET [Item] = @itemname, [Quantity] = @quantity, [Price] = @price, [FeedType] = @feedtype, [Status] = @status, [Image] = @image, WHERE Item = @item";
+            cmd = new OleDbCommand(query, myConn);
+            cmd.Parameters.AddWithValue("@itemname", tbxItemName.Text);
+            cmd.Parameters.AddWithValue("@quantity", Convert.ToInt32(tbxStock.Text));
+            cmd.Parameters.AddWithValue("@price", Convert.ToDecimal(tbxPrice.Text));
+            cmd.Parameters.AddWithValue("@feedtype", cbxType.SelectedItem.ToString());
+            cmd.Parameters.AddWithValue("@status", cbxStatus.SelectedItem.ToString());
+            cmd.Parameters.AddWithValue("@id", dgvInventory.CurrentRow.Cells[0].Value);
+            myConn.Open();
+            cmd.ExecuteNonQuery();
+            myConn.Close();
+            btnLoad_Click(sender, e);
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
@@ -147,6 +147,55 @@ namespace Final
             da.Fill(ds, "Inventory");
             dgvInventory.DataSource = ds.Tables["Inventory"];
             myConn.Close();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvInventory.CurrentRow == null)
+            {
+                MessageBox.Show("Please select a record to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to delete this?",
+                "Confirm Deletion",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                using (myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb"))
+                {
+                    string query = "DELETE FROM [Inventory] WHERE ID = @id";
+                    using (cmd = new OleDbCommand(query, myConn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", dgvInventory.CurrentRow.Cells[0].Value);
+
+                        myConn.Open();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                            MessageBox.Show("Deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        else
+                            MessageBox.Show("No record was deleted. Please check the Student ID.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+            btnLoad_Click(sender, e);
+        }
+
+        private void dgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            indexRow = e.RowIndex;
+            DataGridViewRow row = dgvInventory.Rows[indexRow];
+
+            tbxItemName.Text = row.Cells[1].Value.ToString();
+            tbxStock.Text = row.Cells[2].Value.ToString();
+            tbxPrice.Text = row.Cells[3].Value.ToString();
+            cbxType.SelectedItem = row.Cells[4].Value.ToString();
+            cbxStatus.SelectedItem = row.Cells[5].Value.ToString();
         }
     }
 }
