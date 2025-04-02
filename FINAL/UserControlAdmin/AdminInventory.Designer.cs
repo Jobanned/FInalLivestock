@@ -30,45 +30,22 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminInventory));
-            btnLoad = new MaterialSkin.Controls.MaterialButton();
             panel2 = new Panel();
             dgvInventory = new DataGridView();
+            btnDelete = new MaterialSkin.Controls.MaterialButton();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel1 = new Panel();
             btnSearchItem = new Button();
             imageList1 = new ImageList(components);
             btnAddItem = new Button();
             textBox1 = new TextBox();
-            btnDelete = new MaterialSkin.Controls.MaterialButton();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvInventory).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // btnLoad
-            // 
-            btnLoad.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnLoad.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnLoad.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnLoad.Depth = 0;
-            btnLoad.HighEmphasis = true;
-            btnLoad.Icon = null;
-            btnLoad.Location = new Point(130, 350);
-            btnLoad.Margin = new Padding(4, 6, 4, 6);
-            btnLoad.MouseState = MaterialSkin.MouseState.HOVER;
-            btnLoad.Name = "btnLoad";
-            btnLoad.NoAccentTextColor = Color.Empty;
-            btnLoad.Size = new Size(103, 36);
-            btnLoad.TabIndex = 27;
-            btnLoad.Text = "VIEW ITEMS";
-            btnLoad.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnLoad.UseAccentColor = false;
-            btnLoad.UseVisualStyleBackColor = true;
-            btnLoad.Click += btnLoad_Click;
-            // 
             // panel2
             // 
-            panel2.Controls.Add(btnLoad);
             panel2.Controls.Add(dgvInventory);
             panel2.Controls.Add(btnDelete);
             panel2.Dock = DockStyle.Right;
@@ -89,13 +66,36 @@
             dgvInventory.TabIndex = 26;
             dgvInventory.CellClick += dgvInventory_CellClick;
             // 
+            // btnDelete
+            // 
+            btnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnDelete.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnDelete.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnDelete.Depth = 0;
+            btnDelete.HighEmphasis = true;
+            btnDelete.Icon = null;
+            btnDelete.Location = new Point(28, 307);
+            btnDelete.Margin = new Padding(4, 6, 4, 6);
+            btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
+            btnDelete.Name = "btnDelete";
+            btnDelete.NoAccentTextColor = Color.Empty;
+            btnDelete.Size = new Size(73, 36);
+            btnDelete.TabIndex = 24;
+            btnDelete.Text = "Delete";
+            btnDelete.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnDelete.UseAccentColor = false;
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Dock = DockStyle.Bottom;
             flowLayoutPanel1.Location = new Point(0, 40);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(461, 379);
             flowLayoutPanel1.TabIndex = 2;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // panel1
             // 
@@ -152,27 +152,6 @@
             textBox1.Size = new Size(363, 40);
             textBox1.TabIndex = 0;
             // 
-            // btnDelete
-            // 
-            btnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnDelete.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnDelete.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnDelete.Depth = 0;
-            btnDelete.HighEmphasis = true;
-            btnDelete.Icon = null;
-            btnDelete.Location = new Point(294, 350);
-            btnDelete.Margin = new Padding(4, 6, 4, 6);
-            btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
-            btnDelete.Name = "btnDelete";
-            btnDelete.NoAccentTextColor = Color.Empty;
-            btnDelete.Size = new Size(73, 36);
-            btnDelete.TabIndex = 24;
-            btnDelete.Text = "Delete";
-            btnDelete.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnDelete.UseAccentColor = false;
-            btnDelete.UseVisualStyleBackColor = true;
-            btnDelete.Click += btnDelete_Click;
-            // 
             // AdminInventory
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -194,7 +173,6 @@
         #endregion
         private Panel panel2;
         private DataGridView dgvInventory;
-        private MaterialSkin.Controls.MaterialButton btnLoad;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel1;
         private TextBox textBox1;

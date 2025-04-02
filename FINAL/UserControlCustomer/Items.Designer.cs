@@ -30,11 +30,13 @@
         {
             panel1 = new Panel();
             parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
-            btnEdit = new MaterialSkin.Controls.MaterialButton();
-            btnDelete = new MaterialSkin.Controls.MaterialButton();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            lblQuantity = new Label();
+            lblItemName = new Label();
+            lblPrice = new Label();
+            btnEdit = new MaterialSkin.Controls.MaterialButton();
             imgView = new PictureBox();
             panel1.SuspendLayout();
             parrotGradientPanel1.SuspendLayout();
@@ -55,11 +57,13 @@
             parrotGradientPanel1.BottomLeft = Color.FromArgb(122, 90, 73);
             parrotGradientPanel1.BottomRight = Color.FromArgb(156, 188, 95);
             parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            parrotGradientPanel1.Controls.Add(btnEdit);
-            parrotGradientPanel1.Controls.Add(btnDelete);
             parrotGradientPanel1.Controls.Add(label3);
             parrotGradientPanel1.Controls.Add(label2);
             parrotGradientPanel1.Controls.Add(label1);
+            parrotGradientPanel1.Controls.Add(lblQuantity);
+            parrotGradientPanel1.Controls.Add(lblItemName);
+            parrotGradientPanel1.Controls.Add(lblPrice);
+            parrotGradientPanel1.Controls.Add(btnEdit);
             parrotGradientPanel1.Controls.Add(imgView);
             parrotGradientPanel1.Dock = DockStyle.Fill;
             parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
@@ -74,6 +78,79 @@
             parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             parrotGradientPanel1.TopLeft = Color.FromArgb(240, 231, 213);
             parrotGradientPanel1.TopRight = Color.FromArgb(156, 188, 95);
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Transparent;
+            label3.Location = new Point(13, 196);
+            label3.Name = "label3";
+            label3.Size = new Size(100, 28);
+            label3.TabIndex = 13;
+            label3.Text = "Quantity:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Transparent;
+            label2.Location = new Point(13, 168);
+            label2.Name = "label2";
+            label2.Size = new Size(73, 28);
+            label2.TabIndex = 12;
+            label2.Text = "Name:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Transparent;
+            label1.Location = new Point(13, 140);
+            label1.Name = "label1";
+            label1.Size = new Size(64, 28);
+            label1.TabIndex = 11;
+            label1.Text = "Price:";
+            // 
+            // lblQuantity
+            // 
+            lblQuantity.AutoSize = true;
+            lblQuantity.BackColor = Color.Transparent;
+            lblQuantity.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblQuantity.ForeColor = Color.Transparent;
+            lblQuantity.Location = new Point(119, 196);
+            lblQuantity.Name = "lblQuantity";
+            lblQuantity.Size = new Size(95, 28);
+            lblQuantity.TabIndex = 8;
+            lblQuantity.Text = "Quantity";
+            lblQuantity.Click += lblQuantity_Click;
+            // 
+            // lblItemName
+            // 
+            lblItemName.AutoSize = true;
+            lblItemName.BackColor = Color.Transparent;
+            lblItemName.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblItemName.ForeColor = Color.Transparent;
+            lblItemName.Location = new Point(119, 168);
+            lblItemName.Name = "lblItemName";
+            lblItemName.Size = new Size(68, 28);
+            lblItemName.TabIndex = 7;
+            lblItemName.Text = "Name";
+            // 
+            // lblPrice
+            // 
+            lblPrice.AutoSize = true;
+            lblPrice.BackColor = Color.Transparent;
+            lblPrice.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPrice.ForeColor = Color.Transparent;
+            lblPrice.Location = new Point(119, 140);
+            lblPrice.Name = "lblPrice";
+            lblPrice.Size = new Size(59, 28);
+            lblPrice.TabIndex = 6;
+            lblPrice.Text = "Price";
             // 
             // btnEdit
             // 
@@ -94,61 +171,6 @@
             btnEdit.UseAccentColor = false;
             btnEdit.UseVisualStyleBackColor = true;
             btnEdit.Click += btnEdit_Click;
-            // 
-            // btnDelete
-            // 
-            btnDelete.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnDelete.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnDelete.Depth = 0;
-            btnDelete.HighEmphasis = true;
-            btnDelete.Icon = null;
-            btnDelete.Location = new Point(132, 226);
-            btnDelete.Margin = new Padding(4, 6, 4, 6);
-            btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
-            btnDelete.Name = "btnDelete";
-            btnDelete.NoAccentTextColor = Color.Empty;
-            btnDelete.Size = new Size(73, 36);
-            btnDelete.TabIndex = 4;
-            btnDelete.Text = "Delete";
-            btnDelete.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnDelete.UseAccentColor = false;
-            btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Transparent;
-            label3.Location = new Point(13, 111);
-            label3.Name = "label3";
-            label3.Size = new Size(68, 28);
-            label3.TabIndex = 3;
-            label3.Text = "Name:";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Transparent;
-            label2.Location = new Point(13, 167);
-            label2.Name = "label2";
-            label2.Size = new Size(129, 28);
-            label2.TabIndex = 2;
-            label2.Text = "Quantity Left:";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Transparent;
-            label1.Location = new Point(13, 22);
-            label1.Name = "label1";
-            label1.Size = new Size(58, 28);
-            label1.TabIndex = 1;
-            label1.Text = "Price:";
             // 
             // imgView
             // 
@@ -180,9 +202,11 @@
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
         private PictureBox imgView;
         private MaterialSkin.Controls.MaterialButton btnEdit;
-        private MaterialSkin.Controls.MaterialButton btnDelete;
-        private Label label3;
-        private Label label2;
+        private Label lblQuantity;
+        private Label lblItemName;
+        private Label lblPrice;
         private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }

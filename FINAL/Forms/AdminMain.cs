@@ -1,6 +1,7 @@
 ﻿using FINAL;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using Microsoft.VisualBasic.ApplicationServices;
 using ReaLTaiizor.Controls;
 using System;
 using System.Collections.Generic;
@@ -41,30 +42,8 @@ namespace Final
             this.Hide();
         }
 
-        private void materialTabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (materialTabControl1.SelectedTab == home)
-            {
 
-            }
-            else if (materialTabControl1.SelectedTab == inventory)
-            {
 
-            }
-            else if (materialTabControl1.SelectedTab == supplier)
-            {
 
-            }
-
-            else if (materialTabControl1.SelectedTab == sales)
-            {
-
-            }
-        }
-
-        private void pnlHome_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

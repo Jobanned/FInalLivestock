@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,25 +23,14 @@ namespace Final
         public AdminInventory()
         {
             InitializeComponent();
+            LoadData();
         }
-
-
-
-       /* private void btnUpdate_Click(object sender, EventArgs e)
+        private void LoadData()
         {
-            string query = "UPDATE [Inventory] SET [Item] = @itemname, [Quantity] = @quantity, [Price] = @price, [FeedType] = @feedtype, [Status] = @status, [Image] = @image, WHERE Item = @item";
-            cmd = new OleDbCommand(query, myConn);
-            cmd.Parameters.AddWithValue("@itemname", tbxItemName.Text);
-            cmd.Parameters.AddWithValue("@quantity", Convert.ToInt32(tbxStock.Text));
-            cmd.Parameters.AddWithValue("@price", Convert.ToDecimal(tbxPrice.Text));
-            cmd.Parameters.AddWithValue("@feedtype", cbxType.SelectedItem.ToString());
-            cmd.Parameters.AddWithValue("@status", cbxStatus.SelectedItem.ToString());
-            cmd.Parameters.AddWithValue("@id", dgvInventory.CurrentRow.Cells[0].Value);
-            myConn.Open();
-            cmd.ExecuteNonQuery();
-            myConn.Close();
-            btnLoad_Click(sender, e);
-        } */
+
+            btnLoad_Click(null, EventArgs.Empty);
+            LoadItemsToFlowPanel();
+        }
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
@@ -81,39 +71,113 @@ namespace Final
                         int rowsAffected = cmd.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
+                        {
                             MessageBox.Show("Deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadData();
+                        }
                         else
+                        {
                             MessageBox.Show("No record was deleted. Please check the Student ID.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                        }
                     }
                 }
             }
-            btnLoad_Click(sender, e);
         }
-
         private void dgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indexRow = e.RowIndex;
             DataGridViewRow row = dgvInventory.Rows[indexRow];
 
-          /*  tbxItemName.Text = row.Cells[1].Value.ToString();
-            tbxStock.Text = row.Cells[2].Value.ToString();
-            tbxPrice.Text = row.Cells[3].Value.ToString();
-            cbxType.SelectedItem = row.Cells[4].Value.ToString();
-            cbxStatus.SelectedItem = row.Cells[5].Value.ToString(); */
         }
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
             AddItem addItem = new AddItem();
+            addItem.ItemAdded += AddItem_ItemAdded;
+            PositionAddItemControl(addItem);
+        }
+        private void AddItem_ItemAdded(object sender, AddItem.ItemAddedEventArgs e)
+        {
+            // Add to flowLayoutPanel
+         /*   Items newItem = new Items
+            {
+                ItemName = e.ItemName,
+                Quantity = e.Quantity,
+                Price = e.Price,
+                CurrentFeedType = e.FeedType,
+                CurrentStatus = e.Status,
+                ItemImage = e.Image
+            };
+            flowLayoutPanel1.Controls.Add(newItem); */
 
+            // Refresh DataGridView
+            RefreshAllData();
+        }
+        private void PositionAddItemControl(AddItem addItem)
+        {
             int x = (this.ClientSize.Width - addItem.Width) / 2;
             int y = (this.ClientSize.Height - addItem.Height) / 2;
-
             addItem.Location = new Point(x, y);
             addItem.Size = new Size(384, 499);
-
             this.Controls.Add(addItem);
             addItem.BringToFront();
+        }
+        private void RefreshAllData()
+        {
+            btnLoad_Click(null, EventArgs.Empty);
+
+            // Refresh FlowLayoutPanel
+            LoadItemsToFlowPanel();
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void LoadItemsToFlowPanel()
+        {
+            flowLayoutPanel1.Controls.Clear();
+
+            try
+            {
+                using (myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb"))
+                {
+                    da = new OleDbDataAdapter("SELECT * FROM Inventory", myConn);
+                    ds = new DataSet();
+                    myConn.Open();
+                    da.Fill(ds, "Inventory");
+
+                    foreach (DataRow row in ds.Tables["Inventory"].Rows)
+                    {
+                        Items itemControl = new Items
+                        {
+                            ItemName = row["Item"].ToString(),
+                            Quantity = Convert.ToInt32(row["Quantity"]),
+                            Price = Convert.ToDecimal(row["Price"]),
+                            CurrentFeedType = row["FeedType"].ToString(),
+                            CurrentStatus = row["Status"].ToString()
+                        };
+
+                        if (row["Image"] != DBNull.Value)
+                        {
+                            byte[] imageData = (byte[])row["Image"];
+                            using (MemoryStream ms = new MemoryStream(imageData))
+                            {
+                                itemControl.ItemImage = Image.FromStream(ms);
+                            }
+                        }
+                        itemControl.DeleteClicked += (sender, e) => {
+                            RefreshAllData();
+                        };
+                        flowLayoutPanel1.Controls.Add(itemControl);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading items to panel: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

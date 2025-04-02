@@ -41,11 +41,11 @@
             pnlSupplier = new Panel();
             suppliersContacts1 = new SuppliersContacts();
             sales = new TabPage();
+            adminSales1 = new AdminSales();
             about = new TabPage();
             materialButton1 = new MaterialSkin.Controls.MaterialButton();
             imageList1 = new ImageList(components);
             toolTip1 = new ToolTip(components);
-            adminSales1 = new AdminSales();
             materialTabControl1.SuspendLayout();
             home.SuspendLayout();
             pnlHome.SuspendLayout();
@@ -74,7 +74,6 @@
             materialTabControl1.SelectedIndex = 0;
             materialTabControl1.Size = new Size(971, 453);
             materialTabControl1.TabIndex = 0;
-            materialTabControl1.SelectedIndexChanged += materialTabControl1_SelectedIndexChanged;
             // 
             // home
             // 
@@ -181,6 +180,14 @@
             sales.Text = "Sales";
             sales.UseVisualStyleBackColor = true;
             // 
+            // adminSales1
+            // 
+            adminSales1.Dock = DockStyle.Fill;
+            adminSales1.Location = new Point(0, 0);
+            adminSales1.Name = "adminSales1";
+            adminSales1.Size = new Size(963, 420);
+            adminSales1.TabIndex = 0;
+            // 
             // about
             // 
             about.Controls.Add(materialButton1);
@@ -248,14 +255,6 @@
             // toolTip1
             // 
             toolTip1.ToolTipTitle = "Search";
-            // 
-            // adminSales1
-            // 
-            adminSales1.Dock = DockStyle.Fill;
-            adminSales1.Location = new Point(0, 0);
-            adminSales1.Name = "adminSales1";
-            adminSales1.Size = new Size(963, 420);
-            adminSales1.TabIndex = 0;
             // 
             // AdminMain
             // 

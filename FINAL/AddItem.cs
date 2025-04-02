@@ -18,9 +18,29 @@ namespace Final
         OleDbCommand? cmd;
         DataSet? ds;
         int indexRow;
+        public event EventHandler<ItemAddedEventArgs> ItemAdded;
+
         public AddItem()
         {
             InitializeComponent();
+        }
+        public class ItemAddedEventArgs : EventArgs
+        {
+            public string ItemName { get; set; }
+            public int Quantity { get; set; }
+            public decimal Price { get; set; }
+            public string FeedType { get; set; }
+            public string Status { get; set; }
+            public Image Image { get; set; }
+        }
+        public void SetItemValues(string name, string quantity, string price, string feedType, string status, Image image)
+        {
+            tbxItemName.Text = name;
+            tbxStock.Text = quantity;
+            tbxPrice.Text = price;
+            cbxType.SelectedItem = feedType;
+            cbxStatus.SelectedItem = status;
+            imgView.Image = image;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -63,6 +83,15 @@ namespace Final
             cmd.Parameters.AddWithValue("@image", imageBytes);
             cmd.ExecuteNonQuery();
             myConn.Close();
+            ItemAdded?.Invoke(this, new ItemAddedEventArgs
+            {
+                ItemName = tbxItemName.Text,
+                Quantity = Convert.ToInt32(tbxStock.Text),
+                Price = Convert.ToDecimal(tbxPrice.Text),
+                FeedType = cbxType.SelectedItem?.ToString(),
+                Status = cbxStatus.SelectedItem?.ToString(),
+                Image = imgView.Image
+            });
             MessageBox.Show("Item added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Parent.Controls.Remove(this);
         }
@@ -99,6 +128,21 @@ namespace Final
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Parent.Controls.Remove(this);
+        }
+
+        private void tbxItemName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void parrotGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
