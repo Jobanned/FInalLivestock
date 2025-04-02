@@ -81,6 +81,7 @@
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(0, 37);
             flowLayoutPanel1.Name = "flowLayoutPanel1";

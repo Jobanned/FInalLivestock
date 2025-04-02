@@ -31,13 +31,16 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemsShop));
             parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            button2 = new Button();
+            button1 = new Button();
+            lblPrice = new Label();
+            lblQty = new Label();
+            lblName = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             imgView = new PictureBox();
-            btnAddtoCart = new Button();
             imageList1 = new ImageList(components);
-            btnCheckout = new Button();
             parrotGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)imgView).BeginInit();
             SuspendLayout();
@@ -47,8 +50,11 @@
             parrotGradientPanel1.BottomLeft = Color.FromArgb(122, 90, 73);
             parrotGradientPanel1.BottomRight = Color.FromArgb(156, 188, 95);
             parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            parrotGradientPanel1.Controls.Add(btnCheckout);
-            parrotGradientPanel1.Controls.Add(btnAddtoCart);
+            parrotGradientPanel1.Controls.Add(button2);
+            parrotGradientPanel1.Controls.Add(button1);
+            parrotGradientPanel1.Controls.Add(lblPrice);
+            parrotGradientPanel1.Controls.Add(lblQty);
+            parrotGradientPanel1.Controls.Add(lblName);
             parrotGradientPanel1.Controls.Add(label3);
             parrotGradientPanel1.Controls.Add(label2);
             parrotGradientPanel1.Controls.Add(label1);
@@ -59,7 +65,7 @@
             parrotGradientPanel1.Name = "parrotGradientPanel1";
             parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             parrotGradientPanel1.PrimerColor = Color.White;
-            parrotGradientPanel1.Size = new Size(307, 288);
+            parrotGradientPanel1.Size = new Size(239, 230);
             parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
             parrotGradientPanel1.TabIndex = 3;
@@ -67,13 +73,69 @@
             parrotGradientPanel1.TopLeft = Color.FromArgb(240, 231, 213);
             parrotGradientPanel1.TopRight = Color.FromArgb(156, 188, 95);
             // 
+            // button2
+            // 
+            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Location = new Point(122, 179);
+            button2.Name = "button2";
+            button2.Size = new Size(108, 48);
+            button2.TabIndex = 60;
+            button2.Text = "PROCEED TO\r\nCHECKOUT\r\n";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(13, 179);
+            button1.Name = "button1";
+            button1.Size = new Size(108, 48);
+            button1.TabIndex = 59;
+            button1.Text = "ADD TO\r\n CART";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // lblPrice
+            // 
+            lblPrice.AutoSize = true;
+            lblPrice.BackColor = Color.Transparent;
+            lblPrice.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPrice.ForeColor = Color.Transparent;
+            lblPrice.Location = new Point(37, 50);
+            lblPrice.Name = "lblPrice";
+            lblPrice.Size = new Size(62, 28);
+            lblPrice.TabIndex = 58;
+            lblPrice.Text = "pesos";
+            // 
+            // lblQty
+            // 
+            lblQty.AutoSize = true;
+            lblQty.BackColor = Color.Transparent;
+            lblQty.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblQty.ForeColor = Color.Transparent;
+            lblQty.Location = new Point(148, 142);
+            lblQty.Name = "lblQty";
+            lblQty.Size = new Size(41, 28);
+            lblQty.TabIndex = 57;
+            lblQty.Text = "qty";
+            // 
+            // lblName
+            // 
+            lblName.AutoSize = true;
+            lblName.BackColor = Color.Transparent;
+            lblName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblName.ForeColor = Color.Transparent;
+            lblName.Location = new Point(87, 114);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(68, 28);
+            lblName.TabIndex = 56;
+            lblName.Text = "Name:";
+            // 
             // label3
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Transparent;
-            label3.Location = new Point(13, 111);
+            label3.Location = new Point(13, 114);
             label3.Name = "label3";
             label3.Size = new Size(68, 28);
             label3.TabIndex = 3;
@@ -85,7 +147,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Transparent;
-            label2.Location = new Point(13, 167);
+            label2.Location = new Point(13, 142);
             label2.Name = "label2";
             label2.Size = new Size(129, 28);
             label2.TabIndex = 2;
@@ -106,30 +168,12 @@
             // imgView
             // 
             imgView.BackColor = SystemColors.AppWorkspace;
-            imgView.Location = new Point(165, 13);
+            imgView.Location = new Point(105, 3);
             imgView.Name = "imgView";
             imgView.Size = new Size(125, 103);
-            imgView.SizeMode = PictureBoxSizeMode.Zoom;
+            imgView.SizeMode = PictureBoxSizeMode.StretchImage;
             imgView.TabIndex = 0;
             imgView.TabStop = false;
-            // 
-            // btnAddtoCart
-            // 
-            btnAddtoCart.BackColor = Color.Transparent;
-            btnAddtoCart.FlatAppearance.BorderColor = Color.White;
-            btnAddtoCart.FlatStyle = FlatStyle.Flat;
-            btnAddtoCart.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAddtoCart.ForeColor = Color.Transparent;
-            btnAddtoCart.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAddtoCart.ImageKey = "shopping-cart.png";
-            btnAddtoCart.ImageList = imageList1;
-            btnAddtoCart.Location = new Point(3, 237);
-            btnAddtoCart.Name = "btnAddtoCart";
-            btnAddtoCart.Size = new Size(152, 51);
-            btnAddtoCart.TabIndex = 54;
-            btnAddtoCart.Text = "Add to Cart";
-            btnAddtoCart.TextAlign = ContentAlignment.MiddleRight;
-            btnAddtoCart.UseVisualStyleBackColor = false;
             // 
             // imageList1
             // 
@@ -139,32 +183,13 @@
             imageList1.Images.SetKeyName(0, "checkout.png");
             imageList1.Images.SetKeyName(1, "shopping-cart.png");
             // 
-            // btnCheckout
-            // 
-            btnCheckout.BackColor = Color.Transparent;
-            btnCheckout.FlatAppearance.BorderColor = Color.White;
-            btnCheckout.FlatStyle = FlatStyle.Flat;
-            btnCheckout.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCheckout.ForeColor = Color.Transparent;
-            btnCheckout.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCheckout.ImageKey = "checkout.png";
-            btnCheckout.ImageList = imageList1;
-            btnCheckout.Location = new Point(155, 237);
-            btnCheckout.Name = "btnCheckout";
-            btnCheckout.Size = new Size(152, 51);
-            btnCheckout.TabIndex = 55;
-            btnCheckout.Text = "Proceeed to\r\nCheckout";
-            btnCheckout.TextAlign = ContentAlignment.MiddleRight;
-            btnCheckout.UseVisualStyleBackColor = false;
-            btnCheckout.Click += button1_Click;
-            // 
             // ItemsShop
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(parrotGradientPanel1);
             Name = "ItemsShop";
-            Size = new Size(307, 288);
+            Size = new Size(239, 230);
             parrotGradientPanel1.ResumeLayout(false);
             parrotGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)imgView).EndInit();
@@ -178,8 +203,11 @@
         private Label label2;
         private Label label1;
         private PictureBox imgView;
-        private Button btnAddtoCart;
         private ImageList imageList1;
-        private Button btnCheckout;
+        private Label lblPrice;
+        private Label lblQty;
+        private Label lblName;
+        private Button button2;
+        private Button button1;
     }
 }
