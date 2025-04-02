@@ -53,13 +53,18 @@ namespace Final
             }
             else if (materialTabControl1.SelectedTab == supplier)
             {
-    
+
             }
 
             else if (materialTabControl1.SelectedTab == sales)
             {
 
             }
+        }
+
+        private void pnlHome_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

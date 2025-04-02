@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Final
 {
-    public partial class Items : UserControl
+    public partial class ItemsShop : UserControl
     {
-        public Items()
+        public ItemsShop()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

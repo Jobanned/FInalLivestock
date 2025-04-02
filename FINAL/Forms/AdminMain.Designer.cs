@@ -33,6 +33,7 @@
             materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             home = new TabPage();
             pnlHome = new Panel();
+            adminDashboard1 = new AdminDashboard();
             inventory = new TabPage();
             pnlInventory = new Panel();
             adminInventory1 = new AdminInventory();
@@ -44,12 +45,15 @@
             materialButton1 = new MaterialSkin.Controls.MaterialButton();
             imageList1 = new ImageList(components);
             toolTip1 = new ToolTip(components);
+            adminSales1 = new AdminSales();
             materialTabControl1.SuspendLayout();
             home.SuspendLayout();
+            pnlHome.SuspendLayout();
             inventory.SuspendLayout();
             pnlInventory.SuspendLayout();
             supplier.SuspendLayout();
             pnlSupplier.SuspendLayout();
+            sales.SuspendLayout();
             about.SuspendLayout();
             SuspendLayout();
             // 
@@ -87,11 +91,21 @@
             // 
             // pnlHome
             // 
+            pnlHome.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            pnlHome.Controls.Add(adminDashboard1);
             pnlHome.Dock = DockStyle.Fill;
             pnlHome.Location = new Point(3, 3);
             pnlHome.Name = "pnlHome";
             pnlHome.Size = new Size(957, 414);
             pnlHome.TabIndex = 0;
+            // 
+            // adminDashboard1
+            // 
+            adminDashboard1.Dock = DockStyle.Fill;
+            adminDashboard1.Location = new Point(0, 0);
+            adminDashboard1.Name = "adminDashboard1";
+            adminDashboard1.Size = new Size(957, 414);
+            adminDashboard1.TabIndex = 0;
             // 
             // inventory
             // 
@@ -157,6 +171,7 @@
             // 
             // sales
             // 
+            sales.Controls.Add(adminSales1);
             sales.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             sales.ImageKey = "file.png";
             sales.Location = new Point(4, 29);
@@ -234,6 +249,14 @@
             // 
             toolTip1.ToolTipTitle = "Search";
             // 
+            // adminSales1
+            // 
+            adminSales1.Dock = DockStyle.Fill;
+            adminSales1.Location = new Point(0, 0);
+            adminSales1.Name = "adminSales1";
+            adminSales1.Size = new Size(963, 420);
+            adminSales1.TabIndex = 0;
+            // 
             // AdminMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -247,11 +270,13 @@
             Text = "Hello Admin!";
             materialTabControl1.ResumeLayout(false);
             home.ResumeLayout(false);
+            pnlHome.ResumeLayout(false);
             inventory.ResumeLayout(false);
             pnlInventory.ResumeLayout(false);
             pnlInventory.PerformLayout();
             supplier.ResumeLayout(false);
             pnlSupplier.ResumeLayout(false);
+            sales.ResumeLayout(false);
             about.ResumeLayout(false);
             about.PerformLayout();
             ResumeLayout(false);
@@ -268,11 +293,13 @@
         private TabPage tabPage4;
         private TabPage about;
         private MaterialSkin.Controls.MaterialButton materialButton1;
-        private Panel pnlHome;
         private ToolTip toolTip1;
         private Panel pnlInventory;
         private Panel pnlSupplier;
         private AdminInventory adminInventory1;
         private SuppliersContacts suppliersContacts1;
+        private Panel pnlHome;
+        private AdminDashboard adminDashboard1;
+        private AdminSales adminSales1;
     }
 }

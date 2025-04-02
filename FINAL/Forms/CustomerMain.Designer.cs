@@ -32,20 +32,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerMain));
             materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             Shop = new TabPage();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            panelSearch = new Panel();
+            pnlShop = new Panel();
+            ucShop1 = new UCShop();
             Cart = new TabPage();
-            flowLayoutPanel2 = new FlowLayoutPanel();
+            pnlCart = new Panel();
+            customerCart1 = new CustomerCart();
             Checkout = new TabPage();
-            flowLayoutPanel3 = new FlowLayoutPanel();
+            pnlCheckout = new Panel();
             Account = new TabPage();
             imageList1 = new ImageList(components);
-            materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            ucCheckout1 = new UCCheckout();
             materialTabControl1.SuspendLayout();
             Shop.SuspendLayout();
+            pnlShop.SuspendLayout();
             Cart.SuspendLayout();
+            pnlCart.SuspendLayout();
             Checkout.SuspendLayout();
-            Account.SuspendLayout();
+            pnlCheckout.SuspendLayout();
             SuspendLayout();
             // 
             // materialTabControl1
@@ -67,8 +70,7 @@
             // 
             // Shop
             // 
-            Shop.Controls.Add(flowLayoutPanel1);
-            Shop.Controls.Add(panelSearch);
+            Shop.Controls.Add(pnlShop);
             Shop.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Shop.ImageKey = "shop32.png";
             Shop.Location = new Point(4, 29);
@@ -79,25 +81,26 @@
             Shop.Text = "Shop";
             Shop.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel1
+            // pnlShop
             // 
-            flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Location = new Point(3, 36);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(957, 381);
-            flowLayoutPanel1.TabIndex = 1;
+            pnlShop.Controls.Add(ucShop1);
+            pnlShop.Dock = DockStyle.Fill;
+            pnlShop.Location = new Point(3, 3);
+            pnlShop.Name = "pnlShop";
+            pnlShop.Size = new Size(957, 414);
+            pnlShop.TabIndex = 0;
             // 
-            // panelSearch
+            // ucShop1
             // 
-            panelSearch.Dock = DockStyle.Top;
-            panelSearch.Location = new Point(3, 3);
-            panelSearch.Name = "panelSearch";
-            panelSearch.Size = new Size(957, 33);
-            panelSearch.TabIndex = 0;
+            ucShop1.Dock = DockStyle.Fill;
+            ucShop1.Location = new Point(0, 0);
+            ucShop1.Name = "ucShop1";
+            ucShop1.Size = new Size(957, 414);
+            ucShop1.TabIndex = 0;
             // 
             // Cart
             // 
-            Cart.Controls.Add(flowLayoutPanel2);
+            Cart.Controls.Add(pnlCart);
             Cart.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Cart.ImageKey = "shopping-cart.png";
             Cart.Location = new Point(4, 29);
@@ -108,17 +111,26 @@
             Cart.Text = "Cart";
             Cart.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel2
+            // pnlCart
             // 
-            flowLayoutPanel2.Dock = DockStyle.Fill;
-            flowLayoutPanel2.Location = new Point(3, 3);
-            flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(957, 414);
-            flowLayoutPanel2.TabIndex = 0;
+            pnlCart.Controls.Add(customerCart1);
+            pnlCart.Dock = DockStyle.Fill;
+            pnlCart.Location = new Point(3, 3);
+            pnlCart.Name = "pnlCart";
+            pnlCart.Size = new Size(957, 414);
+            pnlCart.TabIndex = 0;
+            // 
+            // customerCart1
+            // 
+            customerCart1.Dock = DockStyle.Fill;
+            customerCart1.Location = new Point(0, 0);
+            customerCart1.Name = "customerCart1";
+            customerCart1.Size = new Size(957, 414);
+            customerCart1.TabIndex = 0;
             // 
             // Checkout
             // 
-            Checkout.Controls.Add(flowLayoutPanel3);
+            Checkout.Controls.Add(pnlCheckout);
             Checkout.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Checkout.ImageKey = "shopping-bag.png";
             Checkout.Location = new Point(4, 29);
@@ -128,17 +140,17 @@
             Checkout.Text = "Checkout";
             Checkout.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel3
+            // pnlCheckout
             // 
-            flowLayoutPanel3.Dock = DockStyle.Fill;
-            flowLayoutPanel3.Location = new Point(0, 0);
-            flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new Size(963, 420);
-            flowLayoutPanel3.TabIndex = 0;
+            pnlCheckout.Controls.Add(ucCheckout1);
+            pnlCheckout.Dock = DockStyle.Fill;
+            pnlCheckout.Location = new Point(0, 0);
+            pnlCheckout.Name = "pnlCheckout";
+            pnlCheckout.Size = new Size(963, 420);
+            pnlCheckout.TabIndex = 0;
             // 
             // Account
             // 
-            Account.Controls.Add(materialButton1);
             Account.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Account.ImageKey = "user.png";
             Account.Location = new Point(4, 29);
@@ -180,25 +192,14 @@
             imageList1.Images.SetKeyName(24, "user.png");
             imageList1.Images.SetKeyName(25, "user32.png");
             // 
-            // materialButton1
+            // ucCheckout1
             // 
-            materialButton1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            materialButton1.Depth = 0;
-            materialButton1.HighEmphasis = true;
-            materialButton1.Icon = null;
-            materialButton1.Location = new Point(437, 357);
-            materialButton1.Margin = new Padding(4, 6, 4, 6);
-            materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialButton1.Name = "materialButton1";
-            materialButton1.NoAccentTextColor = Color.Empty;
-            materialButton1.Size = new Size(82, 36);
-            materialButton1.TabIndex = 1;
-            materialButton1.Text = "Log Out";
-            materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            materialButton1.UseAccentColor = false;
-            materialButton1.UseVisualStyleBackColor = true;
-            materialButton1.Click += materialButton1_Click;
+            ucCheckout1.Dock = DockStyle.Fill;
+            ucCheckout1.Location = new Point(0, 0);
+            ucCheckout1.Margin = new Padding(4, 4, 4, 4);
+            ucCheckout1.Name = "ucCheckout1";
+            ucCheckout1.Size = new Size(963, 420);
+            ucCheckout1.TabIndex = 0;
             // 
             // CustomerMain
             // 
@@ -214,10 +215,11 @@
             Load += CustomerMain_Load;
             materialTabControl1.ResumeLayout(false);
             Shop.ResumeLayout(false);
+            pnlShop.ResumeLayout(false);
             Cart.ResumeLayout(false);
+            pnlCart.ResumeLayout(false);
             Checkout.ResumeLayout(false);
-            Account.ResumeLayout(false);
-            Account.PerformLayout();
+            pnlCheckout.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -229,10 +231,12 @@
         private ImageList imageList1;
         private TabPage Checkout;
         private TabPage Account;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private Panel panelSearch;
-        private FlowLayoutPanel flowLayoutPanel2;
         private FlowLayoutPanel flowLayoutPanel3;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private Panel pnlShop;
+        private UCShop ucShop1;
+        private Panel pnlCart;
+        private CustomerCart customerCart1;
+        private Panel pnlCheckout;
+        private UCCheckout ucCheckout1;
     }
 }
