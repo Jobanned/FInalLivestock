@@ -38,7 +38,7 @@
             btnSearchItem = new Button();
             imageList1 = new ImageList(components);
             btnAddItem = new Button();
-            textBox1 = new TextBox();
+            tbxSearch = new TextBox();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvInventory).BeginInit();
             panel1.SuspendLayout();
@@ -90,7 +90,7 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Dock = DockStyle.Bottom;
+            flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(0, 40);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(461, 379);
@@ -101,7 +101,7 @@
             // 
             panel1.Controls.Add(btnSearchItem);
             panel1.Controls.Add(btnAddItem);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(tbxSearch);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -141,24 +141,24 @@
             btnAddItem.UseVisualStyleBackColor = true;
             btnAddItem.Click += btnAddItem_Click;
             // 
-            // textBox1
+            // tbxSearch
             // 
-            textBox1.Dock = DockStyle.Left;
-            textBox1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(0, 0);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Search Item";
-            textBox1.Size = new Size(363, 40);
-            textBox1.TabIndex = 0;
+            tbxSearch.Dock = DockStyle.Fill;
+            tbxSearch.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxSearch.Location = new Point(0, 0);
+            tbxSearch.Multiline = true;
+            tbxSearch.Name = "tbxSearch";
+            tbxSearch.PlaceholderText = "Search Item";
+            tbxSearch.Size = new Size(461, 40);
+            tbxSearch.TabIndex = 0;
             // 
             // AdminInventory
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            Controls.Add(panel1);
             Controls.Add(flowLayoutPanel1);
+            Controls.Add(panel1);
             Controls.Add(panel2);
             Name = "AdminInventory";
             Size = new Size(957, 419);
@@ -175,7 +175,7 @@
         private DataGridView dgvInventory;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel1;
-        private TextBox textBox1;
+        private TextBox tbxSearch;
         private Button btnSearchItem;
         private ImageList imageList1;
         private Button btnAddItem;

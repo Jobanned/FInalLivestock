@@ -39,9 +39,11 @@
             customerCart1 = new CustomerCart();
             Checkout = new TabPage();
             pnlCheckout = new Panel();
-            Account = new TabPage();
-            imageList1 = new ImageList(components);
             ucCheckout1 = new UCCheckout();
+            Account = new TabPage();
+            panel1 = new Panel();
+            materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            imageList1 = new ImageList(components);
             materialTabControl1.SuspendLayout();
             Shop.SuspendLayout();
             pnlShop.SuspendLayout();
@@ -49,6 +51,8 @@
             pnlCart.SuspendLayout();
             Checkout.SuspendLayout();
             pnlCheckout.SuspendLayout();
+            Account.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // materialTabControl1
@@ -149,8 +153,18 @@
             pnlCheckout.Size = new Size(963, 420);
             pnlCheckout.TabIndex = 0;
             // 
+            // ucCheckout1
+            // 
+            ucCheckout1.Dock = DockStyle.Fill;
+            ucCheckout1.Location = new Point(0, 0);
+            ucCheckout1.Margin = new Padding(4);
+            ucCheckout1.Name = "ucCheckout1";
+            ucCheckout1.Size = new Size(963, 420);
+            ucCheckout1.TabIndex = 0;
+            // 
             // Account
             // 
+            Account.Controls.Add(panel1);
             Account.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Account.ImageKey = "user.png";
             Account.Location = new Point(4, 29);
@@ -159,6 +173,36 @@
             Account.TabIndex = 3;
             Account.Text = "Account";
             Account.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(materialButton1);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(963, 420);
+            panel1.TabIndex = 0;
+            // 
+            // materialButton1
+            // 
+            materialButton1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            materialButton1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            materialButton1.Depth = 0;
+            materialButton1.HighEmphasis = true;
+            materialButton1.Icon = null;
+            materialButton1.Location = new Point(434, 328);
+            materialButton1.Margin = new Padding(4, 6, 4, 6);
+            materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialButton1.Name = "materialButton1";
+            materialButton1.NoAccentTextColor = Color.Empty;
+            materialButton1.Size = new Size(82, 36);
+            materialButton1.TabIndex = 0;
+            materialButton1.Text = "Log Out";
+            materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            materialButton1.UseAccentColor = false;
+            materialButton1.UseVisualStyleBackColor = true;
+            materialButton1.Click += materialButton1_Click;
             // 
             // imageList1
             // 
@@ -192,15 +236,6 @@
             imageList1.Images.SetKeyName(24, "user.png");
             imageList1.Images.SetKeyName(25, "user32.png");
             // 
-            // ucCheckout1
-            // 
-            ucCheckout1.Dock = DockStyle.Fill;
-            ucCheckout1.Location = new Point(0, 0);
-            ucCheckout1.Margin = new Padding(4, 4, 4, 4);
-            ucCheckout1.Name = "ucCheckout1";
-            ucCheckout1.Size = new Size(963, 420);
-            ucCheckout1.TabIndex = 0;
-            // 
             // CustomerMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -209,6 +244,7 @@
             Controls.Add(materialTabControl1);
             DrawerShowIconsWhenHidden = true;
             DrawerTabControl = materialTabControl1;
+            MaximumSize = new Size(977, 520);
             Name = "CustomerMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Hello User!";
@@ -220,6 +256,9 @@
             pnlCart.ResumeLayout(false);
             Checkout.ResumeLayout(false);
             pnlCheckout.ResumeLayout(false);
+            Account.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -238,5 +277,7 @@
         private CustomerCart customerCart1;
         private Panel pnlCheckout;
         private UCCheckout ucCheckout1;
+        private Panel panel1;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
     }
 }

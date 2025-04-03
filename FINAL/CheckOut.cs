@@ -16,5 +16,10 @@ namespace Final
         {
             InitializeComponent();
         }
+
+        private void btnAddtoCart_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

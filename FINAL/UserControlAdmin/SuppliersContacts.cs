@@ -96,7 +96,7 @@ namespace Final
             {
                 using (myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb"))
                 {
-                    string query = "DELETE FROM [Inventory] WHERE ID = @id";
+                    string query = "DELETE FROM [Inventory] WHERE ProductID = @id";
                     using (cmd = new OleDbCommand(query, myConn))
                     {
                         cmd.Parameters.AddWithValue("@id", dgvSuppliers.CurrentRow.Cells[0].Value);

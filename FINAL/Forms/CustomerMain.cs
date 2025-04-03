@@ -32,5 +32,14 @@ namespace Final
         {
 
         }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Hide();
+            login.ShowDialog();
+            this.Close();
+            return;
+        }
     }
 }
