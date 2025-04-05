@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Final
 {
-    public partial class ForgotPassword : Form
+    public partial class ForgotPassword : Login
     {
         public ForgotPassword()
         {

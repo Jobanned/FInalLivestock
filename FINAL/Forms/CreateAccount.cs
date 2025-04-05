@@ -13,7 +13,7 @@ using System.Security.Cryptography;
 
 namespace Final
 {
-    public partial class CreateAccount : Form
+    public partial class CreateAccount : BaseForm
     {
         OleDbConnection? myConn;
         OleDbDataAdapter? da;

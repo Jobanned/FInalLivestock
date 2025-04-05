@@ -101,21 +101,21 @@ namespace Final
             try
             {
                 OpenFileDialog dialog = new OpenFileDialog();
-                dialog.Filter = "PNG files(*.png)|*.png| JPG files(*.jpg)|*.jpg| All Files(*.*)|*.*";
+                dialog.Filter = "JPEG files(*.jpeg;*.jpg)|*.jpeg;*.jpg| All Files(*.*)|*.*";
                 string imageLocation = "";
 
                 if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     imageLocation = dialog.FileName;
 
-                    // Check if the file extension is .png
-                    if (Path.GetExtension(imageLocation).ToLower() == ".png")
+                    // Check if the file extension is .jpeg or .jpg
+                    if (Path.GetExtension(imageLocation).ToLower() == ".jpeg" || Path.GetExtension(imageLocation).ToLower() == ".jpg")
                     {
                         imgView.ImageLocation = imageLocation;
                     }
                     else
                     {
-                        MessageBox.Show("Please select a PNG file.", "Invalid File Format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Please select a JPEG file.", "Invalid File Format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }

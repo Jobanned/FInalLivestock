@@ -54,14 +54,15 @@ namespace Final
         {
             EditItems ei = new EditItems(
                     lblItemName.Text,                         // ItemName
-                    int.Parse(lblQuantity.Text.Replace("Stock:","")),  // Quantity
+                    int.Parse(lblQuantity.Text.Replace("Stock:", "")),  // Quantity
                     decimal.Parse(lblPrice.Text.Replace("₱", "")),      // Price
                     imgView.Image,                             // ItemImage
                     CurrentFeedType,                           // FeedType
                     CurrentStatus                              // Status
                 );
             //   ei.ShowDialog();  // Use ShowDialog() if you want it to be modal
-            ei.ItemUpdated += (s, args) => {
+            ei.ItemUpdated += (s, args) =>
+            {
                 // Update the current item's properties
                 this.ItemName = args.ItemName;
                 this.Quantity = args.Quantity;
@@ -89,6 +90,11 @@ namespace Final
         }
 
         private void lblQuantity_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void imgView_Click(object sender, EventArgs e)
         {
 
         }

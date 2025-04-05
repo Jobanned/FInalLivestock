@@ -182,7 +182,7 @@
             cbxType.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxType.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbxType.FormattingEnabled = true;
-            cbxType.Items.AddRange(new object[] { "Organic", "Regular", "Premium" });
+            cbxType.Items.AddRange(new object[] { "Dog Feed", "Cat Feed", "Pig Feed", "Fish Feed", "Cow Feed", "Goat Feed", "Sheep Feed", "" });
             cbxType.Location = new Point(148, 325);
             cbxType.Name = "cbxType";
             cbxType.Size = new Size(161, 36);

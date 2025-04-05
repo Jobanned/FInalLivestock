@@ -34,13 +34,14 @@ namespace Final
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb");
-            da = new OleDbDataAdapter("SELECT *FROM Inventory", myConn);
-            ds = new DataSet();
-            myConn.Open();
-            da.Fill(ds, "Inventory");
-            dgvInventory.DataSource = ds.Tables["Inventory"];
-            myConn.Close();
+            using (OleDbConnection myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb"))
+            {
+                OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM Inventory", myConn);
+                DataSet ds = new DataSet();
+                myConn.Open();
+                da.Fill(ds, "Inventory");
+                dgvInventory.DataSource = ds.Tables["Inventory"];
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -62,10 +63,10 @@ namespace Final
             {
                 using (myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb"))
                 {
-                    string query = "DELETE FROM [Inventory] WHERE ID = @id";
+                    string query = "DELETE FROM [Inventory] WHERE Item = @item";
                     using (cmd = new OleDbCommand(query, myConn))
                     {
-                        cmd.Parameters.AddWithValue("@id", dgvInventory.CurrentRow.Cells[0].Value);
+                        cmd.Parameters.AddWithValue("@item", dgvInventory.CurrentRow.Cells[1].Value);
 
                         myConn.Open();
                         int rowsAffected = cmd.ExecuteNonQuery();
@@ -77,7 +78,7 @@ namespace Final
                         }
                         else
                         {
-                            MessageBox.Show("No record was deleted. Please check the Student ID.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("No record was deleted. Please double check.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                         }
                     }
@@ -99,19 +100,6 @@ namespace Final
         }
         private void AddItem_ItemAdded(object sender, AddItem.ItemAddedEventArgs e)
         {
-            // Add to flowLayoutPanel
-         /*   Items newItem = new Items
-            {
-                ItemName = e.ItemName,
-                Quantity = e.Quantity,
-                Price = e.Price,
-                CurrentFeedType = e.FeedType,
-                CurrentStatus = e.Status,
-                ItemImage = e.Image
-            };
-            flowLayoutPanel1.Controls.Add(newItem); */
-
-            // Refresh DataGridView
             RefreshAllData();
         }
         private void PositionAddItemControl(AddItem addItem)
@@ -126,8 +114,6 @@ namespace Final
         private void RefreshAllData()
         {
             btnLoad_Click(null, EventArgs.Empty);
-
-            // Refresh FlowLayoutPanel
             LoadItemsToFlowPanel();
         }
 

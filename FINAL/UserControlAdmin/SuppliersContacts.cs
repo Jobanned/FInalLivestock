@@ -54,15 +54,16 @@ namespace Final
             tbxSupplierName.Text = "";
             tbxPhone.Text = "";
             tbxAddress.Text = "";
+            tbxItem.Text = "";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb");
             da = new OleDbDataAdapter("SELECT *FROM Inventory", myConn);
-            string query = "Insert into Supplier ([SupplierName], [PhoneNumber], [Address]) values (@name, @phonenum, @address)";
+            string query = "Insert into Supplier ([SupplierName], [PhoneNumber], [Address], [Item]) values (@name, @phonenum, @address, @item)";
             myConn.Open();
-            if (tbxSupplierName.Text == string.Empty || tbxPhone.Text == string.Empty || tbxAddress.Text == string.Empty)
+            if (tbxSupplierName.Text == string.Empty || tbxPhone.Text == string.Empty || tbxAddress.Text == string.Empty || tbxItem.Text == string.Empty)
             {
                 MessageBox.Show("All fields are required!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -71,10 +72,12 @@ namespace Final
             cmd.Parameters.AddWithValue("@name", tbxSupplierName.Text);
             cmd.Parameters.AddWithValue("@phonenum", tbxPhone.Text);
             cmd.Parameters.AddWithValue("@address", tbxAddress.Text);
+            cmd.Parameters.AddWithValue("@item", tbxItem.Text);
             cmd.ExecuteNonQuery();
             myConn.Close();
-            MessageBox.Show("Item added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Supplier added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnLoad_Click(sender, e);
+            clearFields();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -96,10 +99,10 @@ namespace Final
             {
                 using (myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb"))
                 {
-                    string query = "DELETE FROM [Inventory] WHERE ProductID = @id";
+                    string query = "DELETE FROM [Supplier] WHERE SupplierName = @name";
                     using (cmd = new OleDbCommand(query, myConn))
                     {
-                        cmd.Parameters.AddWithValue("@id", dgvSuppliers.CurrentRow.Cells[0].Value);
+                        cmd.Parameters.AddWithValue("@name", dgvSuppliers.CurrentRow.Cells[1].Value);
 
                         myConn.Open();
                         int rowsAffected = cmd.ExecuteNonQuery();
@@ -107,11 +110,33 @@ namespace Final
                         if (rowsAffected > 0)
                             MessageBox.Show("Deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         else
-                            MessageBox.Show("No record was deleted. Please check the Student ID.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("No record was deleted. Please double check.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
             btnLoad_Click(sender, e);
+            clearFields();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string query = "Update Supplier Set [SupplierName] = @name, [PhoneNumber] = @phonenum, [Address] = @address, [Item] = @item  Where [SupplierName] = @name"; 
+            cmd = new OleDbCommand(query, myConn);
+            cmd.Parameters.AddWithValue("@name", tbxSupplierName.Text);
+            cmd.Parameters.AddWithValue("@phonenum", tbxPhone.Text);
+            cmd.Parameters.AddWithValue("@address", tbxAddress.Text);
+            cmd.Parameters.AddWithValue("@item", tbxItem.Text);
+            myConn.Open();
+            cmd.ExecuteNonQuery();
+            myConn.Close();
+            MessageBox.Show("Supplier updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnLoad_Click(sender, e);
+            clearFields();
         }
     }
 }

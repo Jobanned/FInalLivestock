@@ -208,6 +208,7 @@
             Controls.Add(panel1);
             Name = "AdminDashboard";
             Size = new Size(957, 367);
+            Load += AdminDashboard_Load;
             panel1.ResumeLayout(false);
             materialCard3.ResumeLayout(false);
             materialCard3.PerformLayout();

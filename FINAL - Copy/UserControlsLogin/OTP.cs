@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Final
 {
-    public partial class OTP : UserControl
+    public partial class OTP : ForgotPassword
     {
         string UserEmail;
         string generateOTP;

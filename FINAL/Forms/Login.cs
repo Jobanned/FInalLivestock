@@ -8,7 +8,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Final
 {
-    public partial class Login : Form
+    public partial class Login : BaseForm
     {
         OleDbConnection? myConn;
         OleDbDataAdapter? da;
@@ -107,18 +107,19 @@ namespace Final
 
         private void chkbxShowPass_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkbxShowPass.Checked == true)
-            {
-                tbxPass.UseSystemPasswordChar = false;
-                tbxPass.PasswordChar = '\0';
-                // tbxPass.PasswordChar = '*';
-            }
-            else
-            {
-                tbxPass.UseSystemPasswordChar = true;
-                tbxPass.PasswordChar = '•';
-            }
+              if (chkbxShowPass.Checked == true)
+               {
+                   tbxPass.UseSystemPasswordChar = false;
+                   tbxPass.PasswordChar = '\0';
+                   // tbxPass.PasswordChar = '*';
+               }
+               else
+               {
+                   tbxPass.UseSystemPasswordChar = true;
+                   tbxPass.PasswordChar = '•';
+               } 
         }
+
 
         private void lnklblForgotPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

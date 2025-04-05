@@ -9,8 +9,7 @@
   <Class Name="Final.AdminMain" Collapsed="true">
     <Position X="5.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAAGAAAAAEAACBAAACAAAAAAAHAAAAAAAAAAA=</HashCode>
-      <FileName>Forms\AdminMain.cs</FileName>
+      <HashCode>AAAAAAIBAGAAAAAEAACRAAACQAAAAAAGAAACAQgACAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="Final.CreateAccount" Collapsed="true">
@@ -23,7 +22,7 @@
   <Class Name="Final.CustomerMain" Collapsed="true">
     <Position X="8.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAGAABAAAAACAAAACAICTAAAAAAAACAAAAEA=</HashCode>
+      <HashCode>IQAAAEAAAGAAFAAAAACAAAAGUACSAAAABCEAAQAAAEA=</HashCode>
       <FileName>Forms\CustomerMain.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -35,16 +34,16 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Final.Login" Collapsed="true">
-    <Position X="7" Y="1.5" Width="1.5" />
+    <Position X="13" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAgABEAASAFABQQAASgAAACQIAgCEAAIIACAwBAAAA=</HashCode>
+      <HashCode>AAAgABEAASAFABQQAASgAAACQIAgCEAAIIACA4BAAAA=</HashCode>
       <FileName>Forms\Login.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Final.NewPass" Collapsed="true">
     <Position X="8.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAgAgABASAEABWAAACARAACAIAAAAAAAAACAQEAAAA=</HashCode>
+      <HashCode>AEAgAgABASAEABWAAACARAACAIAAAAAAAAACAQEAAAI=</HashCode>
       <FileName>UserControlsLogin\NewPass.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -58,8 +57,7 @@
   <Class Name="Final.Items" Collapsed="true">
     <Position X="5.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAABBAAAACAAAACAAAYAAAAEAAAAQAAAAA=</HashCode>
-      <FileName>Items.cs</FileName>
+      <HashCode>AAAAgAAAACAAABQBAACAAAACAAAYAAQAAAAAAQAAQAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="Final.Program" Collapsed="true">
@@ -74,6 +72,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAgAAACAAIRFAAACgBAACAACACAAAAAAAIABAAAA=</HashCode>
       <FileName>UserControlsLogin\AccountInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.BaseForm" Collapsed="true">
+    <Position X="13" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

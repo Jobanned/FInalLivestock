@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Final.Properties.Resources" Collapsed="true">
+    <Position X="14.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.AdminMain" Collapsed="true">
+    <Position X="9" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAIBEGAAAAQEAACRBAACQIAAAAAGAAACAQgACAA=</HashCode>
+      <FileName>Forms\AdminMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.CreateAccount" Collapsed="true">
+    <Position X="2" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>0MAgIhABASAEARSQIgCARAACQIAAAEAAJAACAQBBAAA=</HashCode>
+      <FileName>Forms\CreateAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.CustomerMain" Collapsed="true">
+    <Position X="9" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQAAAEAAAGAAFAAAAACAAAAGUACSAAAABCEAAQAAAEA=</HashCode>
+      <FileName>Forms\CustomerMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.ForgotPassword" Collapsed="true">
+    <Position X="12.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAABAAACAAEBEAAACBAAACQAAAAAAAIAAAAQAAAAA=</HashCode>
+      <FileName>Forms\ForgotPassword.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.Login" Collapsed="true">
+    <Position X="4" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgABEAASAFABQQAASgAAACQIAgCEAAIIACAwBAAAA=</HashCode>
+      <FileName>Forms\Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.AddItem" Collapsed="true">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUAgAAAABCIAQBUAAwChBEACAIAAgAQAAAACAQJACAI=</HashCode>
+      <FileName>UserControlAdmin\AddItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.AddSupplier" Collapsed="true">
+    <Position X="12.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAQAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserControlAdmin\AddSupplier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.AdminDashboard" Collapsed="true">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABQAACAAABAAAACAAAASAADQAAAAAAAAAQBAAAQ=</HashCode>
+      <FileName>UserControlAdmin\AdminDashboard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.AdminInventory" Collapsed="true">
+    <Position X="7.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACIACAAAAAAAACAAABCAIAAAAACAAAAAQAAAAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.AdminSales" Collapsed="true">
+    <Position X="10.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABgAAAKAAAACABjSAAAAAAAAAQAAABA=</HashCode>
+      <FileName>UserControlAdmin\AdminSales.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.Items" Collapsed="true">
+    <Position X="14.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAkhAAAASgAEBQhAACAAAACAIAYAAQAAQACgQAAQQA=</HashCode>
+      <FileName>UserControlAdmin\Items.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.SuppliersContacts" Collapsed="true">
+    <Position X="7.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAxAAQAJCAAABQQAgCADCACEIAAoAAAAAADQQAAAQY=</HashCode>
+      <FileName>UserControlAdmin\SuppliersContacts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.NewPass" Collapsed="true">
+    <Position X="5.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAgAgABASAEABWAAACARAACAIAAAAAAAAACAQEAAAI=</HashCode>
+      <FileName>UserControlsLogin\NewPass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.OTP" Collapsed="true">
+    <Position X="10.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAJBIBAGAAsB2AJACAAAASAgAQAAAAAABACUAABAA=</HashCode>
+      <FileName>UserControlsLogin\OTP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.AboutAdmin" Collapsed="true">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AboutAdmin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.BaseForm" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.CheckOut" Collapsed="true">
+    <Position X="12.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACAAABQAAACAAAACCAAAAAQAAAAAAAAAQAg=</HashCode>
+      <FileName>CheckOut.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.CustomerCart" Collapsed="true">
+    <Position X="7.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIACAAAAAAAACAAAACAIAAAAAAAAAAAQAAAAI=</HashCode>
+      <FileName>CustomerCart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.ItemsShop" Collapsed="true">
+    <Position X="7.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACAAABQAAACAAAACAAAYAAQAAAAAAAAAwAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.Program" Collapsed="true">
+    <Position X="12.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.UCCheckout" Collapsed="true">
+    <Position X="9" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAgAAAAACAAABQAAQCABAAiAIAAAAAAAAACAQAAAAA=</HashCode>
+      <FileName>UCCheckout.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.UCShop" Collapsed="true">
+    <Position X="10.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAIACAAAAQAAACABAAiAIAAQAAAAAACAQAAAAI=</HashCode>
+      <FileName>UCShop.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Final.Forms.EditItems" Collapsed="true">
+    <Position X="10.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAACAACIAABUQAgCBAAACAAAAAAQAAAAAAQBACAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FINAL.AccountInfo" Collapsed="true">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAACAAIRFAAACgBAACAACACAAAAAAAIABAAAA=</HashCode>
+      <FileName>UserControlsLogin\AccountInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
