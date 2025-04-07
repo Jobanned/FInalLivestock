@@ -21,5 +21,25 @@ namespace Final
         {
 
         }
+
+        private void imgView_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nmrcQuantity_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPrice_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

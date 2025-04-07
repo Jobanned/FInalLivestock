@@ -31,7 +31,7 @@ namespace Final
             {
                 myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb");
 
-                string query = @"SELECT Inventory.ID, Inventory.Item, Inventory.Quantity, Inventory.Price, Inventory.Image 
+                string query = @"SELECT Inventory.UserID, Inventory.Item, Inventory.Quantity, Inventory.Price, Inventory.Image 
                                 FROM Inventory";
 
                 da = new OleDbDataAdapter(query, myConn);
@@ -62,7 +62,7 @@ namespace Final
                         {
                             ItemsShop item = new ItemsShop
                             {
-                                ItemID = row["ID"].ToString(),
+                                ItemID = row["UserID"].ToString(),
                                 ItemName = row["Item"].ToString(),
                                 Quantity = row["Quantity"].ToString(),
                                 Price = row["Price"].ToString(),

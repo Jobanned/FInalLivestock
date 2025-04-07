@@ -34,7 +34,7 @@ namespace Final
         public string Price
         {
             get => lblPrice.Text;
-            set => lblPrice.Text = $"₱: {value}";
+            set => lblPrice.Text = $"₱{value}";
         }
         public object ItemImage
         {
@@ -76,12 +76,8 @@ namespace Final
 
             return new Bitmap(100, 100);
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnAddtoCart_Click(object sender, EventArgs e)
         {
 
         }
