@@ -8,6 +8,9 @@
   </Class>
   <Class Name="Final.AdminMain">
     <Position X="18.25" Y="2.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAgAAIBEGAAAAQEAACRBAACQIAAAAAGAAACAQgACAA=</HashCode>
       <FileName>Forms\AdminMain.cs</FileName>
@@ -15,20 +18,28 @@
   </Class>
   <Class Name="Final.CreateAccount">
     <Position X="0.5" Y="2" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>0MAgIhABASAEARSQIgCARAACQIAAAEAAJAACAQBBAAA=</HashCode>
-      <FileName>Forms\CreateAccount.cs</FileName>
+      <HashCode>0IAAIhABASAAARSAIgCAQAACAAAAAEAAJAAAAQBBAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="Final.CustomerMain">
-    <Position X="7.75" Y="0.5" Width="1.5" />
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>IQAAAEAAAGAAEAAAAACAAAAGQACSAAAABCAAAQQAAEA=</HashCode>
+      <HashCode>IQAAAEAAAGAAEABAAACAAAAHQACSAgAABAAAAQQAAEA=</HashCode>
       <FileName>Forms\CustomerMain.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Final.ForgotPassword">
-    <Position X="5.75" Y="8.75" Width="1.5" />
+    <Position X="6" Y="6.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>EAAAABAAACAAEBEAAACBAAACQAAAAAAAIAAAAQAAAAA=</HashCode>
       <FileName>Forms\ForgotPassword.cs</FileName>
@@ -36,6 +47,9 @@
   </Class>
   <Class Name="Final.Login">
     <Position X="2.5" Y="2" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAgABEAASAFABQQAASgAAACQIAgCEAAIIACAwBAAAA=</HashCode>
       <FileName>Forms\Login.cs</FileName>
@@ -43,6 +57,9 @@
   </Class>
   <Class Name="Final.AddItem">
     <Position X="14.75" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <NestedTypes>
       <Class Name="Final.AddItem.ItemAddedEventArgs" Collapsed="true">
         <TypeIdentifier>
@@ -56,7 +73,10 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Final.AdminDashboard">
-    <Position X="11.25" Y="1.5" Width="1.5" />
+    <Position X="11.25" Y="2.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAABQAACAAABAAAACAAAASAADQAAAAAAAAAQBAAAQ=</HashCode>
       <FileName>UserControlAdmin\AdminDashboard.cs</FileName>
@@ -64,13 +84,19 @@
   </Class>
   <Class Name="Final.AdminInventory">
     <Position X="6" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>IAAhAACIACAQAAQAAQCABABCEIAAEAADQAACARAAAQQ=</HashCode>
+      <HashCode>IBAhAACIACAQAAQAAUCABACCEIAAEAADQAACAQAAAAA=</HashCode>
       <FileName>UserControlAdmin\AdminInventory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Final.AdminSales" Collapsed="true">
+  <Class Name="Final.AdminSales">
     <Position X="10.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAABgAAAKAAAACABjSAAAAAAAAAQAAABA=</HashCode>
       <FileName>UserControlAdmin\AdminSales.cs</FileName>
@@ -78,13 +104,19 @@
   </Class>
   <Class Name="Final.Items">
     <Position X="16.5" Y="2.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAkhAAAASgAEBQhAACAAAACAIAYAAQAAQACgQAAQQA=</HashCode>
       <FileName>UserControlAdmin\Items.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Final.SuppliersContacts">
-    <Position X="13" Y="6.25" Width="1.5" />
+    <Position X="11.5" Y="5.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AIAxAAQAJCAAABQQAgCADCACEIAAoAAAAAADQQAAAQY=</HashCode>
       <FileName>UserControlAdmin\SuppliersContacts.cs</FileName>
@@ -92,13 +124,19 @@
   </Class>
   <Class Name="Final.NewPass">
     <Position X="4.25" Y="2" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AEAgAgABASAEABWAAACARAACAIAAAAAAAAACAQEAAAI=</HashCode>
       <FileName>UserControlsLogin\NewPass.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Final.OTP">
-    <Position X="11.25" Y="7" Width="1.5" />
+    <Position X="9.5" Y="5.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AEAAJBIBAGAAsB2AJACAAAASAgAQAAAAAABACUAABAA=</HashCode>
       <FileName>UserControlsLogin\OTP.cs</FileName>
@@ -106,6 +144,9 @@
   </Class>
   <Class Name="Final.AboutAdmin" Collapsed="true">
     <Position X="14.25" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>AboutAdmin.cs</FileName>
@@ -120,16 +161,20 @@
   </Class>
   <Class Name="Final.CustomerCart">
     <Position X="7.75" Y="6" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AACABAAIgCIAABQAACiAAIASggAABBAAAAAAAQAEAAI=</HashCode>
-      <FileName>CustomerCart.cs</FileName>
+      <HashCode>AAAAAAAIACAAABQAAACAAIASAAAAABAAAAAAAQAAAAI=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="Final.ItemsShop">
-    <Position X="9.5" Y="1.5" Width="1.5" />
+    <Position X="9.5" Y="2.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AQAEAAAIASgAABQAgACAAAADCAAQAAQAAAAggAAAwAg=</HashCode>
-      <FileName>ItemsShop.cs</FileName>
+      <HashCode>AQAAAAAAACAAABQAAACAAAACAAAQAAQAAAAAAAAAwAg=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="Final.Program" Collapsed="true">
@@ -142,14 +187,16 @@
   <Class Name="Final.UCCheckout" Collapsed="true">
     <Position X="17.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAAgAAAAACAAABQAAQCABAAiAIAAAAAAAAACAQAAAAA=</HashCode>
-      <FileName>UCCheckout.cs</FileName>
+      <HashCode>gAAAAAAAACAAABQAAACAAAACAIAAAAAAAAAAAQAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="Final.UCShop">
     <Position X="13" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAgAAAIACAAAAQAAACABAAiAIAAQAAAAAACAQAAAAI=</HashCode>
+      <HashCode>ABAgAAAIACAAAAQAAACABACiAIAAQAAgAAACAQAAAAI=</HashCode>
       <FileName>UCShop.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -163,7 +210,7 @@
       </Class>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AFAkAACEBSoEABWwggChBECCAIgAAAQAAAACgQBACAA=</HashCode>
+      <HashCode>AFAkAACEBSoEABWwggChBECCAIgAAAQAAAACgQBACQQ=</HashCode>
       <FileName>Forms\EditItems.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -173,6 +220,10 @@
       <HashCode>AAAAAgAAACAAIRFAAACgBAACAACACAAAAAAAIABAAAA=</HashCode>
       <FileName>UserControlsLogin\AccountInfo.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="System.Windows.Forms.UserControl" Collapsed="true">
+    <Position X="8.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

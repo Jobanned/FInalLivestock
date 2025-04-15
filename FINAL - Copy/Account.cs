@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Final
 {
-    public partial class AddSupplier : UserControl
+    public partial class Account : UserControl
     {
-        public AddSupplier()
+        public Account()
         {
             InitializeComponent();
         }

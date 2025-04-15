@@ -32,6 +32,8 @@
             label1 = new Label();
             dgvSuppliers = new DataGridView();
             panel2 = new Panel();
+            tbxItem = new TextBox();
+            label4 = new Label();
             btnLoad = new MaterialSkin.Controls.MaterialButton();
             btnClear = new MaterialSkin.Controls.MaterialButton();
             btnDelete = new MaterialSkin.Controls.MaterialButton();
@@ -83,6 +85,8 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(tbxItem);
+            panel2.Controls.Add(label4);
             panel2.Controls.Add(btnLoad);
             panel2.Controls.Add(btnClear);
             panel2.Controls.Add(btnDelete);
@@ -94,11 +98,30 @@
             panel2.Controls.Add(label3);
             panel2.Controls.Add(tbxSupplierName);
             panel2.Controls.Add(label2);
-            panel2.Dock = DockStyle.Top;
+            panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 188);
             panel2.Name = "panel2";
-            panel2.Size = new Size(957, 179);
+            panel2.Size = new Size(957, 226);
             panel2.TabIndex = 1;
+            // 
+            // tbxItem
+            // 
+            tbxItem.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxItem.Location = new Point(560, 125);
+            tbxItem.Name = "tbxItem";
+            tbxItem.Size = new Size(269, 31);
+            tbxItem.TabIndex = 32;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(499, 125);
+            label4.Name = "label4";
+            label4.Size = new Size(55, 28);
+            label4.TabIndex = 31;
+            label4.Text = "Item:";
+            label4.Click += label4_Click;
             // 
             // btnLoad
             // 
@@ -182,6 +205,7 @@
             btnUpdate.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btnUpdate.UseAccentColor = false;
             btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnAdd
             // 
@@ -207,7 +231,7 @@
             // tbxAddress
             // 
             tbxAddress.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxAddress.Location = new Point(359, 105);
+            tbxAddress.Location = new Point(560, 73);
             tbxAddress.Name = "tbxAddress";
             tbxAddress.Size = new Size(269, 31);
             tbxAddress.TabIndex = 5;
@@ -216,7 +240,7 @@
             // 
             tbx.AutoSize = true;
             tbx.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbx.Location = new Point(359, 74);
+            tbx.Location = new Point(468, 73);
             tbx.Name = "tbx";
             tbx.Size = new Size(86, 28);
             tbx.TabIndex = 4;
@@ -225,7 +249,7 @@
             // tbxPhone
             // 
             tbxPhone.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxPhone.Location = new Point(159, 126);
+            tbxPhone.Location = new Point(269, 122);
             tbxPhone.Name = "tbxPhone";
             tbxPhone.Size = new Size(161, 34);
             tbxPhone.TabIndex = 3;
@@ -234,7 +258,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(5, 129);
+            label3.Location = new Point(115, 125);
             label3.Name = "label3";
             label3.Size = new Size(148, 28);
             label3.TabIndex = 2;
@@ -243,7 +267,7 @@
             // tbxSupplierName
             // 
             tbxSupplierName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxSupplierName.Location = new Point(159, 74);
+            tbxSupplierName.Location = new Point(269, 70);
             tbxSupplierName.Name = "tbxSupplierName";
             tbxSupplierName.Size = new Size(161, 34);
             tbxSupplierName.TabIndex = 1;
@@ -252,7 +276,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(7, 74);
+            label2.Location = new Point(117, 70);
             label2.Name = "label2";
             label2.Size = new Size(146, 28);
             label2.TabIndex = 0;
@@ -265,7 +289,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "SuppliersContacts";
-            Size = new Size(957, 367);
+            Size = new Size(957, 414);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSuppliers).EndInit();
@@ -291,5 +315,7 @@
         private MaterialSkin.Controls.MaterialButton btnUpdate;
         private MaterialSkin.Controls.MaterialButton btnAdd;
         private MaterialSkin.Controls.MaterialButton btnLoad;
+        private TextBox tbxItem;
+        private Label label4;
     }
 }

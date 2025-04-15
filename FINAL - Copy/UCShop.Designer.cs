@@ -59,6 +59,7 @@
             btnSearch.Size = new Size(65, 37);
             btnSearch.TabIndex = 2;
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // imageList1
             // 
@@ -78,6 +79,7 @@
             tbxSearch.PlaceholderText = "Search Item";
             tbxSearch.Size = new Size(894, 37);
             tbxSearch.TabIndex = 0;
+            tbxSearch.TextChanged += tbxSearch_TextChanged;
             // 
             // flowLayoutPanel1
             // 

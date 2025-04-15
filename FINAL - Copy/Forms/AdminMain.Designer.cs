@@ -43,6 +43,7 @@
             sales = new TabPage();
             adminSales1 = new AdminSales();
             about = new TabPage();
+            panel1 = new Panel();
             materialButton1 = new MaterialSkin.Controls.MaterialButton();
             imageList1 = new ImageList(components);
             toolTip1 = new ToolTip(components);
@@ -55,6 +56,7 @@
             pnlSupplier.SuspendLayout();
             sales.SuspendLayout();
             about.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // materialTabControl1
@@ -190,7 +192,7 @@
             // 
             // about
             // 
-            about.Controls.Add(materialButton1);
+            about.Controls.Add(panel1);
             about.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             about.ImageKey = "user32.png";
             about.Location = new Point(4, 29);
@@ -200,6 +202,15 @@
             about.Text = "About";
             about.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(materialButton1);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(963, 420);
+            panel1.TabIndex = 0;
+            // 
             // materialButton1
             // 
             materialButton1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
@@ -207,7 +218,7 @@
             materialButton1.Depth = 0;
             materialButton1.HighEmphasis = true;
             materialButton1.Icon = null;
-            materialButton1.Location = new Point(430, 362);
+            materialButton1.Location = new Point(478, 344);
             materialButton1.Margin = new Padding(4, 6, 4, 6);
             materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton1.Name = "materialButton1";
@@ -218,7 +229,7 @@
             materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             materialButton1.UseAccentColor = false;
             materialButton1.UseVisualStyleBackColor = true;
-            materialButton1.Click += materialButton1_Click;
+            materialButton1.Click += materialButton1_Click_1;
             // 
             // imageList1
             // 
@@ -277,7 +288,8 @@
             pnlSupplier.ResumeLayout(false);
             sales.ResumeLayout(false);
             about.ResumeLayout(false);
-            about.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -291,7 +303,6 @@
         private TabPage sales;
         private TabPage tabPage4;
         private TabPage about;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
         private ToolTip toolTip1;
         private Panel pnlInventory;
         private Panel pnlSupplier;
@@ -300,5 +311,7 @@
         private Panel pnlHome;
         private AdminDashboard adminDashboard1;
         private AdminSales adminSales1;
+        private Panel panel1;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
     }
 }

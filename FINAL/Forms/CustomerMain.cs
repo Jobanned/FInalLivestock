@@ -14,6 +14,8 @@ namespace Final
 {
     public partial class CustomerMain : MaterialForm
     {
+        private MaterialSkinManager materialSkinManager;
+
         public CustomerMain()
         {
             InitializeComponent();
@@ -28,12 +30,8 @@ namespace Final
 
         }
 
-        private void aboutAdmin1_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void materialButton1_Click(object sender, EventArgs e)
+        private void materialButton2_Click(object sender, EventArgs e)
         {
             Login login = new Login();
             this.Hide();

@@ -8,11 +8,15 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Final.CartItem;
+//using static Final.Carts;
 
 namespace Final
 {
     public partial class ItemsShop : UserControl
     {
+        public event Action<CartItem> ItemAddedToCart;
+        public bool IsCartConnected => ItemAddedToCart != null;
 
         public ItemsShop()
         {
@@ -34,7 +38,7 @@ namespace Final
         public string Price
         {
             get => lblPrice.Text;
-            set => lblPrice.Text = $"₱: {value}";
+            set => lblPrice.Text = $"₱{value}";
         }
         public object ItemImage
         {
@@ -62,23 +66,71 @@ namespace Final
         // Load embedded default image
         private Image LoadDefaultItemImage()
         {
-            var assembly = Assembly.GetExecutingAssembly();
-            string resourceName = "feeding.Resources.default_item.png";
-
-            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            try
             {
-                if (stream != null)
+                var assembly = Assembly.GetExecutingAssembly();
+
+                // Try both possible resource name formats
+                string[] possibleResources = {
+            "feeding.Resources.default_item.png",  // Original path
+            $"{assembly.GetName().Name}.Resources.default_item.png",  // Project namespace
+            "Final.Resources.default_item.png"     // Common fallback
+        };
+
+                foreach (var resourceName in possibleResources)
                 {
-                    return Image.FromStream(stream);
+                    using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+                    {
+                        if (stream != null)
+                        {
+                            return Image.FromStream(stream);
+                        }
+                    }
                 }
             }
+            catch
+            {
+                // Fall through to default image
+            }
 
-
-            return new Bitmap(100, 100);
+            // Create a simple placeholder image
+            Bitmap bmp = new Bitmap(100, 100);
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                g.Clear(Color.LightGray);
+                g.DrawString("No Image", new Font("Arial", 8), Brushes.Black, 10, 45);
+            }
+            return bmp;
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnAddtoCart_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var cartItem = new CartItem
+                {
+                    ItemID = this.ItemID,
+                    ItemName = this.ItemName,
+                    Quantity = string.IsNullOrWhiteSpace(this.Quantity) ? "1" : this.Quantity,
+                    Price = (this.Price ?? "0").Replace("₱", "").Trim(),
+                    ItemImage = this.imgView.Image ?? LoadDefaultItemImage()
+                };
 
+                if (ItemAddedToCart == null)
+                {
+                    MessageBox.Show("Cart system is not ready yet", "Try Again", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                ItemAddedToCart.Invoke(cartItem);
+                MessageBox.Show("Item added to cart successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Couldn't add to cart: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+    
     }
 }

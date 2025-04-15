@@ -1,4 +1,4 @@
-using FINAL;
+//using FINAL;
 using ReaLTaiizor.Forms;
 using System.Data;
 using System.Data.OleDb;
@@ -8,7 +8,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Final
 {
-    public partial class Login : Form
+    public partial class Login : BaseForm
     {
         OleDbConnection? myConn;
         OleDbDataAdapter? da;
@@ -45,7 +45,8 @@ namespace Final
                 return;
             }
 
-            myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source= \"C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb\"");
+            myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\"C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb\"");
+          //  da = new OleDbDataAdapter("SELECT *FROM Account", myConn);
 
             if (string.IsNullOrWhiteSpace(txtbxUser.Text) || string.IsNullOrWhiteSpace(tbxPass.Text))
             {
@@ -54,15 +55,15 @@ namespace Final
             }
 
             string hashedPassword = HashPassword(tbxPass.Text);
-            string query = "SELECT Username FROM Account WHERE Username = ? AND [Password] = ?";
+            string query = "SELECT Username FROM Account WHERE [Username] = ? AND [Password] = ?";
 
             try
             {
                 myConn.Open();
                 using (OleDbCommand cmd = new OleDbCommand(query, myConn))
                 {
-                    cmd.Parameters.AddWithValue("@username", txtbxUser.Text);
-                    cmd.Parameters.AddWithValue("@password", hashedPassword);
+                    cmd.Parameters.AddWithValue("@Username", txtbxUser.Text);
+                    cmd.Parameters.AddWithValue("@Password", hashedPassword);
 
                     object result = cmd.ExecuteScalar();
                     if (result != null)
@@ -106,11 +107,10 @@ namespace Final
 
         private void chkbxShowPass_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkbxShowPass.Checked == true)
+            if (chkbxShowPass.Checked)
             {
                 tbxPass.UseSystemPasswordChar = false;
                 tbxPass.PasswordChar = '\0';
-                // tbxPass.PasswordChar = '*';
             }
             else
             {
@@ -118,6 +118,7 @@ namespace Final
                 tbxPass.PasswordChar = '•';
             }
         }
+
 
         private void lnklblForgotPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

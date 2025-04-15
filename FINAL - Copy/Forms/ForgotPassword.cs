@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace Final
 {
-    public partial class ForgotPassword : Login
+    public partial class ForgotPassword : Form
     {
         public ForgotPassword()
         {
             InitializeComponent();
-        }
-
-        public Login Login
-        {
-            get => default;
-            set
-            {
-            }
         }
 
         private void lnklblLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

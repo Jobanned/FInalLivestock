@@ -36,10 +36,10 @@
             tbxSearch = new TextBox();
             panel2 = new Panel();
             parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
-            btnAddtoCart = new Button();
-            label2 = new Label();
+            btnConirmBuy = new Button();
+            lblTotalPrice = new Label();
             label1 = new Label();
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            flowLayoutPanelCartItems = new FlowLayoutPanel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             parrotGradientPanel1.SuspendLayout();
@@ -99,8 +99,8 @@
             parrotGradientPanel1.BottomLeft = Color.FromArgb(122, 90, 73);
             parrotGradientPanel1.BottomRight = Color.FromArgb(156, 188, 95);
             parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            parrotGradientPanel1.Controls.Add(btnAddtoCart);
-            parrotGradientPanel1.Controls.Add(label2);
+            parrotGradientPanel1.Controls.Add(btnConirmBuy);
+            parrotGradientPanel1.Controls.Add(lblTotalPrice);
             parrotGradientPanel1.Controls.Add(label1);
             parrotGradientPanel1.Dock = DockStyle.Fill;
             parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
@@ -116,33 +116,35 @@
             parrotGradientPanel1.TopLeft = Color.FromArgb(240, 231, 213);
             parrotGradientPanel1.TopRight = Color.FromArgb(56, 188, 95);
             // 
-            // btnAddtoCart
+            // btnConirmBuy
             // 
-            btnAddtoCart.BackColor = Color.Transparent;
-            btnAddtoCart.FlatAppearance.BorderColor = Color.White;
-            btnAddtoCart.FlatStyle = FlatStyle.Flat;
-            btnAddtoCart.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAddtoCart.ForeColor = Color.Transparent;
-            btnAddtoCart.ImageKey = "(none)";
-            btnAddtoCart.ImageList = imageList1;
-            btnAddtoCart.Location = new Point(787, 20);
-            btnAddtoCart.Name = "btnAddtoCart";
-            btnAddtoCart.Size = new Size(139, 51);
-            btnAddtoCart.TabIndex = 56;
-            btnAddtoCart.Text = "Confirm Buy";
-            btnAddtoCart.UseVisualStyleBackColor = false;
+            btnConirmBuy.BackColor = Color.Transparent;
+            btnConirmBuy.FlatAppearance.BorderColor = Color.White;
+            btnConirmBuy.FlatStyle = FlatStyle.Flat;
+            btnConirmBuy.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnConirmBuy.ForeColor = Color.Transparent;
+            btnConirmBuy.ImageKey = "(none)";
+            btnConirmBuy.ImageList = imageList1;
+            btnConirmBuy.Location = new Point(787, 20);
+            btnConirmBuy.Name = "btnConirmBuy";
+            btnConirmBuy.Size = new Size(139, 51);
+            btnConirmBuy.TabIndex = 56;
+            btnConirmBuy.Text = "Confirm Buy";
+            btnConirmBuy.UseVisualStyleBackColor = false;
+            btnConirmBuy.Click += btnConirmBuy_Click;
             // 
-            // label2
+            // lblTotalPrice
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Transparent;
-            label2.Location = new Point(145, 35);
-            label2.Name = "label2";
-            label2.Size = new Size(94, 25);
-            label2.TabIndex = 1;
-            label2.Text = "totalprice";
+            lblTotalPrice.AutoSize = true;
+            lblTotalPrice.BackColor = Color.Transparent;
+            lblTotalPrice.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalPrice.ForeColor = Color.Transparent;
+            lblTotalPrice.Location = new Point(112, 31);
+            lblTotalPrice.Name = "lblTotalPrice";
+            lblTotalPrice.Size = new Size(94, 25);
+            lblTotalPrice.TabIndex = 1;
+            lblTotalPrice.Text = "totalprice";
+            lblTotalPrice.Click += lblTotalPrice_Click;
             // 
             // label1
             // 
@@ -150,25 +152,28 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Transparent;
-            label1.Location = new Point(36, 32);
+            label1.Location = new Point(3, 28);
             label1.Name = "label1";
             label1.Size = new Size(117, 28);
             label1.TabIndex = 0;
             label1.Text = "Total Price:";
             // 
-            // flowLayoutPanel1
+            // flowLayoutPanelCartItems
             // 
-            flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Location = new Point(0, 37);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(957, 290);
-            flowLayoutPanel1.TabIndex = 3;
+            flowLayoutPanelCartItems.AutoScroll = true;
+            flowLayoutPanelCartItems.Dock = DockStyle.Fill;
+            flowLayoutPanelCartItems.Location = new Point(0, 37);
+            flowLayoutPanelCartItems.Name = "flowLayoutPanelCartItems";
+            flowLayoutPanelCartItems.Size = new Size(957, 290);
+            flowLayoutPanelCartItems.TabIndex = 3;
+            flowLayoutPanelCartItems.WrapContents = false;
+            flowLayoutPanelCartItems.Paint += flowLayoutPanelCartItems_Paint;
             // 
             // CustomerCart
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(flowLayoutPanel1);
+            Controls.Add(flowLayoutPanelCartItems);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "CustomerCart";
@@ -188,10 +193,10 @@
         private TextBox tbxSearch;
         private ImageList imageList1;
         private Panel panel2;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel flowLayoutPanelCartItems;
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
-        private Label label2;
+        private Label lblTotalPrice;
         private Label label1;
-        private Button btnAddtoCart;
+        private Button btnConirmBuy;
     }
 }

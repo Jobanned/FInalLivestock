@@ -34,62 +34,16 @@ namespace Final
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb");
-            da = new OleDbDataAdapter("SELECT *FROM Inventory", myConn);
-            ds = new DataSet();
-            myConn.Open();
-            da.Fill(ds, "Inventory");
-            dgvInventory.DataSource = ds.Tables["Inventory"];
-            myConn.Close();
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (dgvInventory.CurrentRow == null)
+            using (OleDbConnection myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb"))
             {
-                MessageBox.Show("Please select a record to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            DialogResult result = MessageBox.Show(
-                "Are you sure you want to delete this?",
-                "Confirm Deletion",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning
-            );
-
-            if (result == DialogResult.Yes)
-            {
-                using (myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb"))
-                {
-                    string query = "DELETE FROM [Inventory] WHERE ID = @id";
-                    using (cmd = new OleDbCommand(query, myConn))
-                    {
-                        cmd.Parameters.AddWithValue("@id", dgvInventory.CurrentRow.Cells[0].Value);
-
-                        myConn.Open();
-                        int rowsAffected = cmd.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show("Deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            LoadData();
-                        }
-                        else
-                        {
-                            MessageBox.Show("No record was deleted. Please check the Student ID.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                        }
-                    }
-                }
+                OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM Inventory", myConn);
+                DataSet ds = new DataSet();
+                myConn.Open();
+                da.Fill(ds, "Inventory");
+                //dgvInventory.DataSource = ds.Tables["Inventory"];
             }
         }
-        private void dgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            indexRow = e.RowIndex;
-            DataGridViewRow row = dgvInventory.Rows[indexRow];
 
-        }
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
@@ -99,19 +53,6 @@ namespace Final
         }
         private void AddItem_ItemAdded(object sender, AddItem.ItemAddedEventArgs e)
         {
-            // Add to flowLayoutPanel
-         /*   Items newItem = new Items
-            {
-                ItemName = e.ItemName,
-                Quantity = e.Quantity,
-                Price = e.Price,
-                CurrentFeedType = e.FeedType,
-                CurrentStatus = e.Status,
-                ItemImage = e.Image
-            };
-            flowLayoutPanel1.Controls.Add(newItem); */
-
-            // Refresh DataGridView
             RefreshAllData();
         }
         private void PositionAddItemControl(AddItem addItem)
@@ -126,8 +67,6 @@ namespace Final
         private void RefreshAllData()
         {
             btnLoad_Click(null, EventArgs.Empty);
-
-            // Refresh FlowLayoutPanel
             LoadItemsToFlowPanel();
         }
 
@@ -167,7 +106,8 @@ namespace Final
                                 itemControl.ItemImage = Image.FromStream(ms);
                             }
                         }
-                        itemControl.DeleteClicked += (sender, e) => {
+                        itemControl.DeleteClicked += (sender, e) =>
+                        {
                             RefreshAllData();
                         };
                         flowLayoutPanel1.Controls.Add(itemControl);
@@ -177,6 +117,67 @@ namespace Final
             catch (Exception ex)
             {
                 MessageBox.Show($"Error loading items to panel: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tbxSearch_TextChanged(object sender, EventArgs e)
+        {
+            SearchItems(tbxSearch.Text);
+        }
+
+        private void btnSearchItem_Click(object sender, EventArgs e)
+        {
+            SearchItems(tbxSearch.Text);
+        }
+
+        private void SearchItems(string searchText)
+        {
+            flowLayoutPanel1.Controls.Clear();
+
+            try
+            {
+                using (myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb"))
+                {
+                    da = new OleDbDataAdapter($"SELECT * FROM Inventory WHERE Item LIKE '%{searchText}%' OR FeedType LIKE '%{searchText}%'", myConn);
+                    ds = new DataSet();
+                    myConn.Open();
+                    da.Fill(ds, "Inventory");
+
+                    foreach (DataRow row in ds.Tables["Inventory"].Rows)
+                    {
+                        Items itemControl = new Items
+                        {
+                            ItemName = row["Item"].ToString(),
+                            Quantity = Convert.ToInt32(row["Quantity"]),
+                            Price = Convert.ToDecimal(row["Price"]),
+                            CurrentFeedType = row["FeedType"].ToString(),
+                            CurrentStatus = row["Status"].ToString()
+                        };
+
+                        if (row["Image"] != DBNull.Value)
+                        {
+                            byte[] imageData = (byte[])row["Image"];
+                            using (MemoryStream ms = new MemoryStream(imageData))
+                            {
+                                itemControl.ItemImage = Image.FromStream(ms);
+                            }
+                        }
+                        itemControl.DeleteClicked += (sender, e) =>
+                        {
+                            RefreshAllData();
+                        };
+                        flowLayoutPanel1.Controls.Add(itemControl);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error searching items: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

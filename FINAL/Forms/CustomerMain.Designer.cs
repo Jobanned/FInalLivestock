@@ -36,17 +36,19 @@
             ucShop1 = new UCShop();
             Cart = new TabPage();
             pnlCart = new Panel();
+            customerCart1 = new CustomerCart();
             Account = new TabPage();
             panel1 = new Panel();
+            materialButton2 = new MaterialSkin.Controls.MaterialButton();
             imageList1 = new ImageList(components);
             materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            customerCart1 = new CustomerCart();
             materialTabControl1.SuspendLayout();
             Shop.SuspendLayout();
             pnlShop.SuspendLayout();
             Cart.SuspendLayout();
             pnlCart.SuspendLayout();
             Account.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // materialTabControl1
@@ -117,6 +119,14 @@
             pnlCart.Size = new Size(957, 414);
             pnlCart.TabIndex = 0;
             // 
+            // customerCart1
+            // 
+            customerCart1.Dock = DockStyle.Fill;
+            customerCart1.Location = new Point(0, 0);
+            customerCart1.Name = "customerCart1";
+            customerCart1.Size = new Size(957, 414);
+            customerCart1.TabIndex = 0;
+            // 
             // Account
             // 
             Account.Controls.Add(panel1);
@@ -131,11 +141,32 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(materialButton2);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(963, 420);
             panel1.TabIndex = 0;
+            // 
+            // materialButton2
+            // 
+            materialButton2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            materialButton2.Depth = 0;
+            materialButton2.HighEmphasis = true;
+            materialButton2.Icon = null;
+            materialButton2.Location = new Point(402, 343);
+            materialButton2.Margin = new Padding(4, 6, 4, 6);
+            materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            materialButton2.Name = "materialButton2";
+            materialButton2.NoAccentTextColor = Color.Empty;
+            materialButton2.Size = new Size(158, 36);
+            materialButton2.TabIndex = 0;
+            materialButton2.Text = "Log Out";
+            materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            materialButton2.UseAccentColor = false;
+            materialButton2.UseVisualStyleBackColor = true;
+            materialButton2.Click += materialButton2_Click;
             // 
             // imageList1
             // 
@@ -188,15 +219,6 @@
             materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             materialButton1.UseAccentColor = false;
             materialButton1.UseVisualStyleBackColor = true;
-            materialButton1.Click += materialButton1_Click;
-            // 
-            // customerCart1
-            // 
-            customerCart1.Dock = DockStyle.Fill;
-            customerCart1.Location = new Point(0, 0);
-            customerCart1.Name = "customerCart1";
-            customerCart1.Size = new Size(957, 414);
-            customerCart1.TabIndex = 0;
             // 
             // CustomerMain
             // 
@@ -217,6 +239,8 @@
             Cart.ResumeLayout(false);
             pnlCart.ResumeLayout(false);
             Account.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -234,5 +258,6 @@
         private Panel panel1;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private CustomerCart customerCart1;
+        private MaterialSkin.Controls.MaterialButton materialButton2;
     }
 }

@@ -14,6 +14,8 @@ namespace Final
 {
     public partial class CustomerMain : MaterialForm
     {
+        private MaterialSkinManager materialSkinManager;
+
         public CustomerMain()
         {
             InitializeComponent();
@@ -23,20 +25,18 @@ namespace Final
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.Green900, Primary.Green500, Accent.DeepOrange400, TextShade.WHITE);
         }
 
-        public Login Login
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
         private void CustomerMain_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void aboutAdmin1_Load(object sender, EventArgs e)
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void account1_Load(object sender, EventArgs e)
         {
 
         }

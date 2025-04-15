@@ -13,7 +13,7 @@ using System.Security.Cryptography;
 
 namespace Final
 {
-    public partial class NewPass : UserControl
+    public partial class NewPass : BaseForm
     {
         OleDbConnection? myConn;
         OleDbDataAdapter? da;
@@ -26,14 +26,6 @@ namespace Final
             InitializeComponent();
             Email = UserEmail;
 
-        }
-
-        public OTP OTP
-        {
-            get => default;
-            set
-            {
-            }
         }
 
         private void btnContinue_Click(object sender, EventArgs e)

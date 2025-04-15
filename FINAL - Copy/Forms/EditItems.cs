@@ -191,7 +191,7 @@ namespace Final.Forms
                     }
 
                 }
-               
+
             }
 
         }
@@ -212,6 +212,41 @@ namespace Final.Forms
             catch
             {
                 return null; // Silently fail if conversion fails
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to delete this item?", "Confirm Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                using (var myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb"))
+                {
+                    string query = "DELETE FROM Inventory WHERE [Item] = @itemname";
+                    using (var cmd = new OleDbCommand(query, myConn))
+                    {
+                        cmd.Parameters.AddWithValue("@itemname", ItemName);
+                        try
+                        {
+                            myConn.Open();
+                            int rowsAffected = cmd.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Item deleted successfully!");
+                                this.DialogResult = DialogResult.OK;
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("No records were deleted. Item may not exist.");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error deleting record: " + ex.Message);
+                        }
+                    }
+                }
             }
         }
     }

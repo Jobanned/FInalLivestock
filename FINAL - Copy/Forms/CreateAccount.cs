@@ -13,7 +13,7 @@ using System.Security.Cryptography;
 
 namespace Final
 {
-    public partial class CreateAccount : Login
+    public partial class CreateAccount : BaseForm
     {
         OleDbConnection? myConn;
         OleDbDataAdapter? da;
@@ -39,7 +39,7 @@ namespace Final
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
-            myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb");
+            myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb"); 
             da = new OleDbDataAdapter("SELECT *FROM Account", myConn);
             string query = "Insert into Account ([Username], [Name], [Email], [PhoneNum], [Address], [Password]) values (@Username, @Name, @Email, @PhoneNum, @Address, @Password)";
             myConn.Open();
@@ -81,24 +81,15 @@ namespace Final
                 return builder.ToString();
             }
         }
+        
 
-
-        private void chxbxShowPass_CheckedChanged(object sender, EventArgs e)
+void chxbxShowPass_CheckedChanged(object sender, EventArgs e)
         {
-            if (chxbxShowPass.Checked == true)
-            {
-                tbxPass.UseSystemPasswordChar = false;
-                tbxConPass.UseSystemPasswordChar = false;
-                tbxConPass.PasswordChar = '\0';
-                tbxPass.PasswordChar = '\0';
-            }
-            else
-            {
-                tbxPass.UseSystemPasswordChar = true;
-                tbxConPass.UseSystemPasswordChar = true;
-                tbxConPass.PasswordChar = '•';
-                tbxPass.PasswordChar = '•';
-            }
+            bool isChecked = chxbxShowPass.Checked;
+            tbxPass.UseSystemPasswordChar = !isChecked;
+            tbxConPass.UseSystemPasswordChar = !isChecked;
+            tbxPass.PasswordChar = isChecked ? '\0' : '•';
+            tbxConPass.PasswordChar = isChecked ? '\0' : '•';
         }
     }
 }
