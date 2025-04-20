@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditItems));
             parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            btnDelete = new MaterialSkin.Controls.MaterialButton();
             lblID = new Label();
             btnUpdate = new MaterialSkin.Controls.MaterialButton();
             btnCancel = new MaterialSkin.Controls.MaterialButton();
@@ -46,7 +47,6 @@
             label2 = new Label();
             tbx = new Label();
             tbxPrice = new TextBox();
-            btnDelete = new MaterialSkin.Controls.MaterialButton();
             parrotGradientPanel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)imgView).BeginInit();
@@ -86,6 +86,27 @@
             parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             parrotGradientPanel1.TopLeft = Color.FromArgb(240, 231, 213);
             parrotGradientPanel1.TopRight = Color.FromArgb(156, 188, 95);
+            // 
+            // btnDelete
+            // 
+            btnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnDelete.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnDelete.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnDelete.Depth = 0;
+            btnDelete.HighEmphasis = true;
+            btnDelete.Icon = null;
+            btnDelete.Location = new Point(148, 431);
+            btnDelete.Margin = new Padding(4, 6, 4, 6);
+            btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
+            btnDelete.Name = "btnDelete";
+            btnDelete.NoAccentTextColor = Color.Empty;
+            btnDelete.Size = new Size(73, 36);
+            btnDelete.TabIndex = 38;
+            btnDelete.Text = "Delete";
+            btnDelete.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnDelete.UseAccentColor = false;
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // lblID
             // 
@@ -195,7 +216,7 @@
             cbxType.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxType.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbxType.FormattingEnabled = true;
-            cbxType.Items.AddRange(new object[] { "Dog Feed", "Cat Feed", "Pig Feed", "Fish Feed", "Cow Feed", "Goat Feed", "Sheep Feed" });
+            cbxType.Items.AddRange(new object[] { "Dog Food", "Cat Food", "Pig Food", "Fish Fod", "Cow Food", "Chicken Food" });
             cbxType.Location = new Point(148, 325);
             cbxType.Name = "cbxType";
             cbxType.Size = new Size(161, 36);
@@ -284,27 +305,6 @@
             tbxPrice.Name = "tbxPrice";
             tbxPrice.Size = new Size(161, 34);
             tbxPrice.TabIndex = 27;
-            // 
-            // btnDelete
-            // 
-            btnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnDelete.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnDelete.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnDelete.Depth = 0;
-            btnDelete.HighEmphasis = true;
-            btnDelete.Icon = null;
-            btnDelete.Location = new Point(148, 431);
-            btnDelete.Margin = new Padding(4, 6, 4, 6);
-            btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
-            btnDelete.Name = "btnDelete";
-            btnDelete.NoAccentTextColor = Color.Empty;
-            btnDelete.Size = new Size(77, 36);
-            btnDelete.TabIndex = 38;
-            btnDelete.Text = "Delete";
-            btnDelete.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnDelete.UseAccentColor = false;
-            btnDelete.UseVisualStyleBackColor = true;
-            btnDelete.Click += btnDelete_Click;
             // 
             // EditItems
             // 

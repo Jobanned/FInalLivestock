@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,6 +24,7 @@ namespace Final
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.Green900, Primary.Green500, Accent.DeepOrange400, TextShade.WHITE);
+
         }
 
         private void CustomerMain_Load(object sender, EventArgs e)
@@ -31,14 +33,8 @@ namespace Final
         }
 
 
-        private void materialButton2_Click(object sender, EventArgs e)
+        private void materialTabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void account1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

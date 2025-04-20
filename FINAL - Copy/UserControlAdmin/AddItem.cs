@@ -47,7 +47,7 @@ namespace Final
         {
             myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb");
             da = new OleDbDataAdapter("SELECT *FROM Inventory", myConn);
-            string query = "Insert into Inventory ([Item], [Quantity], [Price], [FeedType], [Status], [Image]) values (@itemname, @quantity, @price, @feedtype, @status, @image)";
+            string query = "Insert INTO Inventory ( [UserID], [Item], [Quantity], [Price], [FeedType], [Status], [Image]) values ( ?, ?, ?, ?, ?, ?, ?)";
             myConn.Open();
             if (tbxItemName.Text == string.Empty || tbxStock.Text == string.Empty || tbxPrice.Text == string.Empty)
             {
@@ -70,17 +70,18 @@ namespace Final
                 return;
             }
             cmd = new OleDbCommand(query, myConn);
-            cmd.Parameters.AddWithValue("@itemname", tbxItemName.Text);
-            cmd.Parameters.AddWithValue("@quantity", Convert.ToInt32(tbxStock.Text));
-            cmd.Parameters.AddWithValue("@price", Convert.ToDecimal(tbxPrice.Text));
-            cmd.Parameters.AddWithValue("@feedtype", cbxType.SelectedItem.ToString());
-            cmd.Parameters.AddWithValue("@status", cbxStatus.SelectedItem.ToString());
+            cmd.Parameters.AddWithValue("?", 126);
+            cmd.Parameters.AddWithValue("?", tbxItemName.Text);
+            cmd.Parameters.AddWithValue("?", Convert.ToInt32(tbxStock.Text));
+            cmd.Parameters.AddWithValue("?", Convert.ToDecimal(tbxPrice.Text));
+            cmd.Parameters.AddWithValue("?", cbxType.SelectedItem.ToString());
+            cmd.Parameters.AddWithValue("?", cbxStatus.SelectedItem.ToString());
             //conerting img to byte array
             MemoryStream ms = new MemoryStream();
             imgView.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
             byte[] imageBytes = ms.ToArray();
             //img as parameter
-            cmd.Parameters.AddWithValue("@image", imageBytes);
+            cmd.Parameters.AddWithValue("?", imageBytes);
             cmd.ExecuteNonQuery();
             myConn.Close();
             ItemAdded?.Invoke(this, new ItemAddedEventArgs

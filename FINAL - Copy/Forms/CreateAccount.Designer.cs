@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateAccount));
             parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            pictureBox7 = new PictureBox();
+            lblAddress = new Label();
+            tbxAddress = new TextBox();
             chxbxShowPass = new CheckBox();
             label10 = new Label();
             pictureBox6 = new PictureBox();
@@ -57,10 +60,8 @@
             panel1 = new Panel();
             label5 = new Label();
             Exit = new Button();
-            pictureBox7 = new PictureBox();
-            lblAddress = new Label();
-            tbxAddress = new TextBox();
             parrotGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -68,7 +69,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             SuspendLayout();
             // 
             // parrotGradientPanel1
@@ -116,6 +116,39 @@
             parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             parrotGradientPanel1.TopLeft = Color.FromArgb(240, 231, 213);
             parrotGradientPanel1.TopRight = Color.FromArgb(156, 188, 95);
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.BackColor = Color.Transparent;
+            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.Location = new Point(28, 449);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(44, 36);
+            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox7.TabIndex = 78;
+            pictureBox7.TabStop = false;
+            // 
+            // lblAddress
+            // 
+            lblAddress.AutoSize = true;
+            lblAddress.BackColor = Color.Transparent;
+            lblAddress.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAddress.ForeColor = Color.Transparent;
+            lblAddress.Location = new Point(78, 426);
+            lblAddress.Name = "lblAddress";
+            lblAddress.Size = new Size(112, 20);
+            lblAddress.TabIndex = 77;
+            lblAddress.Text = "Home Address:";
+            // 
+            // tbxAddress
+            // 
+            tbxAddress.BorderStyle = BorderStyle.None;
+            tbxAddress.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxAddress.Location = new Point(78, 449);
+            tbxAddress.Multiline = true;
+            tbxAddress.Name = "tbxAddress";
+            tbxAddress.Size = new Size(252, 36);
+            tbxAddress.TabIndex = 76;
             // 
             // chxbxShowPass
             // 
@@ -201,11 +234,10 @@
             // 
             tbxConPass.BorderStyle = BorderStyle.None;
             tbxConPass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxConPass.Location = new Point(447, 286);
-            tbxConPass.Multiline = true;
+            tbxConPass.Location = new Point(447, 291);
             tbxConPass.Name = "tbxConPass";
-            tbxConPass.PasswordChar = '*';
-            tbxConPass.Size = new Size(252, 36);
+            tbxConPass.PasswordChar = '•';
+            tbxConPass.Size = new Size(252, 27);
             tbxConPass.TabIndex = 68;
             // 
             // pictureBox3
@@ -388,11 +420,10 @@
             // 
             tbxPass.BorderStyle = BorderStyle.None;
             tbxPass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxPass.Location = new Point(447, 202);
-            tbxPass.Multiline = true;
+            tbxPass.Location = new Point(447, 208);
             tbxPass.Name = "tbxPass";
-            tbxPass.PasswordChar = '*';
-            tbxPass.Size = new Size(252, 36);
+            tbxPass.PasswordChar = '•';
+            tbxPass.Size = new Size(252, 27);
             tbxPass.TabIndex = 44;
             // 
             // panel1
@@ -434,39 +465,6 @@
             Exit.UseVisualStyleBackColor = false;
             Exit.Click += Exit_Click;
             // 
-            // pictureBox7
-            // 
-            pictureBox7.BackColor = Color.Transparent;
-            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(28, 449);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(44, 36);
-            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox7.TabIndex = 78;
-            pictureBox7.TabStop = false;
-            // 
-            // lblAddress
-            // 
-            lblAddress.AutoSize = true;
-            lblAddress.BackColor = Color.Transparent;
-            lblAddress.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAddress.ForeColor = Color.Transparent;
-            lblAddress.Location = new Point(78, 426);
-            lblAddress.Name = "lblAddress";
-            lblAddress.Size = new Size(112, 20);
-            lblAddress.TabIndex = 77;
-            lblAddress.Text = "Home Address:";
-            // 
-            // tbxAddress
-            // 
-            tbxAddress.BorderStyle = BorderStyle.None;
-            tbxAddress.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxAddress.Location = new Point(78, 449);
-            tbxAddress.Multiline = true;
-            tbxAddress.Name = "tbxAddress";
-            tbxAddress.Size = new Size(252, 36);
-            tbxAddress.TabIndex = 76;
-            // 
             // CreateAccount
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -479,6 +477,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             parrotGradientPanel1.ResumeLayout(false);
             parrotGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -487,7 +486,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ResumeLayout(false);
         }
 

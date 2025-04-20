@@ -23,6 +23,7 @@ namespace Final
             InitializeComponent();
         }
 
+
         private void btnLoad_Click(object sender, EventArgs e)
         {
             myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb");
@@ -42,6 +43,7 @@ namespace Final
             tbxSupplierName.Text = row.Cells[1].Value.ToString();
             tbxPhone.Text = row.Cells[2].Value.ToString();
             tbxAddress.Text = row.Cells[3].Value.ToString();
+            tbxItem.Text = row.Cells[4].Value.ToString();
 
         }
 
@@ -61,7 +63,7 @@ namespace Final
         {
             myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb");
             da = new OleDbDataAdapter("SELECT *FROM Inventory", myConn);
-            string query = "Insert into Supplier ([SupplierName], [PhoneNumber], [Address], [Item]) values (@name, @phonenum, @address, @item)";
+            string query = "Insert into Supplier ([SupplierName], [PhoneNumber], [Address], [FeedType]) values (@name, @phonenum, @address, @item)";
             myConn.Open();
             if (tbxSupplierName.Text == string.Empty || tbxPhone.Text == string.Empty || tbxAddress.Text == string.Empty || tbxItem.Text == string.Empty)
             {
@@ -125,18 +127,47 @@ namespace Final
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string query = "Update Supplier Set [SupplierName] = @name, [PhoneNumber] = @phonenum, [Address] = @address, [Item] = @item  Where [SupplierName] = @name"; 
-            cmd = new OleDbCommand(query, myConn);
-            cmd.Parameters.AddWithValue("@name", tbxSupplierName.Text);
-            cmd.Parameters.AddWithValue("@phonenum", tbxPhone.Text);
-            cmd.Parameters.AddWithValue("@address", tbxAddress.Text);
-            cmd.Parameters.AddWithValue("@item", tbxItem.Text);
-            myConn.Open();
-            cmd.ExecuteNonQuery();
-            myConn.Close();
-            MessageBox.Show("Supplier updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (string.IsNullOrWhiteSpace(tbxSupplierName.Text) ||
+                string.IsNullOrWhiteSpace(tbxPhone.Text) ||
+                string.IsNullOrWhiteSpace(tbxAddress.Text) ||
+                string.IsNullOrWhiteSpace(tbxItem.Text))
+            {
+                MessageBox.Show("All fields are required!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (dgvSuppliers.CurrentRow == null)
+            {
+                MessageBox.Show("Please select a record to update.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string originalName = dgvSuppliers.CurrentRow.Cells[1].Value.ToString();
+
+            using (myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb"))
+            {
+                string query = "Update Supplier Set [SupplierName] = @name, [PhoneNumber] = @phonenum, [Address] = @address, [FeedType] = @item Where [SupplierName] = @OGname";
+                using (cmd = new OleDbCommand(query, myConn))
+                {
+                    cmd.Parameters.AddWithValue("@name", tbxSupplierName.Text);
+                    cmd.Parameters.AddWithValue("@phonenum", tbxPhone.Text);
+                    cmd.Parameters.AddWithValue("@address", tbxAddress.Text);
+                    cmd.Parameters.AddWithValue("@item", tbxItem.Text);
+                    cmd.Parameters.AddWithValue("@OGname", originalName);
+
+                    myConn.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                        MessageBox.Show("Supplier updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else
+                        MessageBox.Show("No record was updated. Please double-check the Supplier Name.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
             btnLoad_Click(sender, e);
             clearFields();
         }
+
     }
 }

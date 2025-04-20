@@ -1,4 +1,5 @@
 //using FINAL;
+using Final.Forms;
 using ReaLTaiizor.Forms;
 using System.Data;
 using System.Data.OleDb;
@@ -35,18 +36,7 @@ namespace Final
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtbxUser.Text == "admin" && tbxPass.Text == "123")
-            {
-                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                AdminMain admin = new AdminMain();
-                this.Hide();
-                admin.ShowDialog();
-                this.Close();
-                return;
-            }
-
             myConn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\"C:\\Users\\ckarl\\OneDrive\\Documents\\Livestock.accdb\"");
-          //  da = new OleDbDataAdapter("SELECT *FROM Account", myConn);
 
             if (string.IsNullOrWhiteSpace(txtbxUser.Text) || string.IsNullOrWhiteSpace(tbxPass.Text))
             {
@@ -55,7 +45,7 @@ namespace Final
             }
 
             string hashedPassword = HashPassword(tbxPass.Text);
-            string query = "SELECT Username FROM Account WHERE [Username] = ? AND [Password] = ?";
+            string query = "SELECT UserType FROM Account WHERE [Username] = ? AND [Password] = ?";
 
             try
             {
@@ -70,10 +60,20 @@ namespace Final
                     {
                         string userType = result.ToString();
                         MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        CustomerMain cm = new CustomerMain();
-                        cm.Show();
-                        this.Hide();
 
+                        if (userType == "Admin")
+                        {
+                            AdminMain admin = new AdminMain();
+                            this.Hide();
+                            admin.ShowDialog();
+                            this.Close();
+                        }
+                        else
+                        {
+                            CustomerMain cm = new CustomerMain();
+                            cm.Show();
+                            this.Hide();
+                        }
                     }
                     else
                     {

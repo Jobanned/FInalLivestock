@@ -81,7 +81,7 @@
             lnklblChangeEmail.AutoSize = true;
             lnklblChangeEmail.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lnklblChangeEmail.LinkColor = SystemColors.MenuHighlight;
-            lnklblChangeEmail.Location = new Point(224, 335);
+            lnklblChangeEmail.Location = new Point(63, 379);
             lnklblChangeEmail.Name = "lnklblChangeEmail";
             lnklblChangeEmail.Size = new Size(119, 25);
             lnklblChangeEmail.TabIndex = 56;
@@ -93,7 +93,7 @@
             lnklblChangePassword.AutoSize = true;
             lnklblChangePassword.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lnklblChangePassword.LinkColor = SystemColors.MenuHighlight;
-            lnklblChangePassword.Location = new Point(714, 326);
+            lnklblChangePassword.Location = new Point(586, 374);
             lnklblChangePassword.Name = "lnklblChangePassword";
             lnklblChangePassword.Size = new Size(152, 25);
             lnklblChangePassword.TabIndex = 55;
@@ -103,7 +103,7 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(536, 287);
+            pictureBox4.Location = new Point(536, 339);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(44, 36);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -113,7 +113,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(13, 296);
+            pictureBox2.Location = new Point(13, 344);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(44, 36);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -132,27 +132,27 @@
             // 
             // txtbxPassword
             // 
-            txtbxPassword.Location = new Point(586, 287);
-            txtbxPassword.Multiline = true;
+            txtbxPassword.Location = new Point(586, 344);
             txtbxPassword.Name = "txtbxPassword";
             txtbxPassword.PasswordChar = '*';
-            txtbxPassword.Size = new Size(280, 36);
+            txtbxPassword.ReadOnly = true;
+            txtbxPassword.Size = new Size(280, 27);
             txtbxPassword.TabIndex = 51;
             // 
             // txtbxEmail
             // 
-            txtbxEmail.Location = new Point(63, 296);
-            txtbxEmail.Multiline = true;
+            txtbxEmail.Location = new Point(63, 349);
             txtbxEmail.Name = "txtbxEmail";
-            txtbxEmail.Size = new Size(280, 36);
+            txtbxEmail.ReadOnly = true;
+            txtbxEmail.Size = new Size(280, 27);
             txtbxEmail.TabIndex = 50;
             // 
             // txtbxUsername
             // 
-            txtbxUsername.Location = new Point(63, 101);
-            txtbxUsername.Multiline = true;
+            txtbxUsername.Location = new Point(63, 106);
             txtbxUsername.Name = "txtbxUsername";
-            txtbxUsername.Size = new Size(280, 36);
+            txtbxUsername.ReadOnly = true;
+            txtbxUsername.Size = new Size(280, 27);
             txtbxUsername.TabIndex = 49;
             // 
             // label3
@@ -160,7 +160,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10.8F);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(586, 259);
+            label3.Location = new Point(586, 311);
             label3.Name = "label3";
             label3.Size = new Size(91, 25);
             label3.TabIndex = 48;
@@ -171,7 +171,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10.8F);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(63, 268);
+            label2.Location = new Point(63, 316);
             label2.Name = "label2";
             label2.Size = new Size(128, 25);
             label2.TabIndex = 47;
@@ -195,7 +195,7 @@
             bigLabel1.BackColor = Color.Transparent;
             bigLabel1.Font = new Font("Segoe UI Symbol", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bigLabel1.ForeColor = Color.FromArgb(7, 250, 96);
-            bigLabel1.Location = new Point(265, 12);
+            bigLabel1.Location = new Point(348, 13);
             bigLabel1.Name = "bigLabel1";
             bigLabel1.Size = new Size(380, 50);
             bigLabel1.TabIndex = 58;
@@ -206,7 +206,7 @@
             linklblChangeUsername.AutoSize = true;
             linklblChangeUsername.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             linklblChangeUsername.LinkColor = SystemColors.MenuHighlight;
-            linklblChangeUsername.Location = new Point(187, 233);
+            linklblChangeUsername.Location = new Point(63, 251);
             linklblChangeUsername.Name = "linklblChangeUsername";
             linklblChangeUsername.Size = new Size(156, 25);
             linklblChangeUsername.TabIndex = 62;
@@ -216,7 +216,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(13, 194);
+            pictureBox3.Location = new Point(13, 212);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(44, 36);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -225,10 +225,10 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(63, 194);
-            textBox1.Multiline = true;
+            textBox1.Location = new Point(63, 217);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(280, 36);
+            textBox1.ReadOnly = true;
+            textBox1.Size = new Size(280, 27);
             textBox1.TabIndex = 60;
             // 
             // label4
@@ -237,7 +237,7 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 10.8F);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(63, 166);
+            label4.Location = new Point(63, 184);
             label4.Name = "label4";
             label4.Size = new Size(95, 25);
             label4.TabIndex = 59;
@@ -248,7 +248,7 @@
             lnklblChangeAddress.AutoSize = true;
             lnklblChangeAddress.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lnklblChangeAddress.LinkColor = SystemColors.MenuHighlight;
-            lnklblChangeAddress.Location = new Point(724, 233);
+            lnklblChangeAddress.Location = new Point(586, 252);
             lnklblChangeAddress.Name = "lnklblChangeAddress";
             lnklblChangeAddress.Size = new Size(142, 25);
             lnklblChangeAddress.TabIndex = 66;
@@ -258,7 +258,7 @@
             // pictureBox5
             // 
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(536, 194);
+            pictureBox5.Location = new Point(536, 217);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(44, 36);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
@@ -267,11 +267,11 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(586, 194);
-            textBox2.Multiline = true;
+            textBox2.Location = new Point(586, 222);
             textBox2.Name = "textBox2";
             textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(280, 36);
+            textBox2.ReadOnly = true;
+            textBox2.Size = new Size(280, 27);
             textBox2.TabIndex = 64;
             // 
             // label5
@@ -279,7 +279,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10.8F);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(586, 166);
+            label5.Location = new Point(586, 189);
             label5.Name = "label5";
             label5.Size = new Size(81, 25);
             label5.TabIndex = 63;
@@ -290,12 +290,12 @@
             lnklblChngePhnNum.AutoSize = true;
             lnklblChngePhnNum.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lnklblChngePhnNum.LinkColor = SystemColors.MenuHighlight;
-            lnklblChngePhnNum.Location = new Point(665, 140);
+            lnklblChngePhnNum.Location = new Point(586, 136);
             lnklblChngePhnNum.Name = "lnklblChngePhnNum";
-            lnklblChngePhnNum.Size = new Size(201, 25);
+            lnklblChngePhnNum.Size = new Size(197, 25);
             lnklblChngePhnNum.TabIndex = 70;
             lnklblChngePhnNum.TabStop = true;
-            lnklblChngePhnNum.Text = "Change Phone Number:";
+            lnklblChngePhnNum.Text = "Change Phone Number";
             lnklblChngePhnNum.LinkClicked += linkLabel3_LinkClicked;
             // 
             // pictureBox6
@@ -310,11 +310,11 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(586, 101);
-            textBox3.Multiline = true;
+            textBox3.Location = new Point(586, 106);
             textBox3.Name = "textBox3";
             textBox3.PasswordChar = '*';
-            textBox3.Size = new Size(280, 36);
+            textBox3.ReadOnly = true;
+            textBox3.Size = new Size(280, 27);
             textBox3.TabIndex = 68;
             // 
             // label6
@@ -335,7 +335,7 @@
             btnLogout.Depth = 0;
             btnLogout.HighEmphasis = true;
             btnLogout.Icon = null;
-            btnLogout.Location = new Point(784, 372);
+            btnLogout.Location = new Point(784, 406);
             btnLogout.Margin = new Padding(4, 6, 4, 6);
             btnLogout.MouseState = MaterialSkin.MouseState.HOVER;
             btnLogout.Name = "btnLogout";
@@ -377,6 +377,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            DoubleBuffered = true;
             Name = "AccountInfo";
             Size = new Size(957, 414);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();

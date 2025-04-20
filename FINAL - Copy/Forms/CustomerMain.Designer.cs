@@ -40,7 +40,6 @@
             Account = new TabPage();
             panel1 = new Panel();
             accountInfo1 = new AccountInfo();
-            account1 = new Account();
             imageList1 = new ImageList(components);
             materialButton1 = new MaterialSkin.Controls.MaterialButton();
             materialTabControl1.SuspendLayout();
@@ -67,6 +66,7 @@
             materialTabControl1.SelectedIndex = 0;
             materialTabControl1.Size = new Size(971, 453);
             materialTabControl1.TabIndex = 0;
+            materialTabControl1.SelectedIndexChanged += materialTabControl1_SelectedIndexChanged;
             // 
             // Shop
             // 
@@ -143,7 +143,6 @@
             // panel1
             // 
             panel1.Controls.Add(accountInfo1);
-            panel1.Controls.Add(account1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -158,15 +157,6 @@
             accountInfo1.Name = "accountInfo1";
             accountInfo1.Size = new Size(963, 420);
             accountInfo1.TabIndex = 1;
-            // 
-            // account1
-            // 
-            account1.Dock = DockStyle.Fill;
-            account1.Location = new Point(0, 0);
-            account1.Name = "account1";
-            account1.Size = new Size(963, 420);
-            account1.TabIndex = 0;
-            account1.Load += account1_Load;
             // 
             // imageList1
             // 
@@ -257,7 +247,6 @@
         private CustomerCart customerCart1;
         private TabPage Account;
         private Panel panel1;
-        private Account account1;
         private AccountInfo accountInfo1;
     }
 }

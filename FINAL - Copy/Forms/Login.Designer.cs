@@ -213,11 +213,10 @@
             // 
             tbxPass.BorderStyle = BorderStyle.None;
             tbxPass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxPass.Location = new Point(65, 216);
-            tbxPass.Multiline = true;
+            tbxPass.Location = new Point(65, 221);
             tbxPass.Name = "tbxPass";
-            tbxPass.PasswordChar = '*';
-            tbxPass.Size = new Size(219, 36);
+            tbxPass.PasswordChar = '•';
+            tbxPass.Size = new Size(219, 27);
             tbxPass.TabIndex = 58;
             tbxPass.KeyDown += tbxPass_KeyDown;
             // 
@@ -275,10 +274,9 @@
             // 
             txtbxUser.BorderStyle = BorderStyle.None;
             txtbxUser.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtbxUser.Location = new Point(65, 139);
-            txtbxUser.Multiline = true;
+            txtbxUser.Location = new Point(65, 144);
             txtbxUser.Name = "txtbxUser";
-            txtbxUser.Size = new Size(219, 36);
+            txtbxUser.Size = new Size(219, 27);
             txtbxUser.TabIndex = 44;
             // 
             // panelWelcome

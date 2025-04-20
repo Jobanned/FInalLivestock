@@ -57,7 +57,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(957, 188);
+            panel1.Size = new Size(957, 414);
             panel1.TabIndex = 0;
             // 
             // label1
@@ -73,13 +73,13 @@
             // dgvSuppliers
             // 
             dgvSuppliers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvSuppliers.Dock = DockStyle.Bottom;
-            dgvSuppliers.Location = new Point(0, 39);
+            dgvSuppliers.Dock = DockStyle.Fill;
+            dgvSuppliers.Location = new Point(0, 0);
             dgvSuppliers.Name = "dgvSuppliers";
             dgvSuppliers.ReadOnly = true;
             dgvSuppliers.RowHeadersWidth = 51;
             dgvSuppliers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvSuppliers.Size = new Size(957, 149);
+            dgvSuppliers.Size = new Size(957, 414);
             dgvSuppliers.TabIndex = 0;
             dgvSuppliers.CellClick += dgvSuppliers_CellClick;
             // 
@@ -98,10 +98,10 @@
             panel2.Controls.Add(label3);
             panel2.Controls.Add(tbxSupplierName);
             panel2.Controls.Add(label2);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 188);
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(0, 240);
             panel2.Name = "panel2";
-            panel2.Size = new Size(957, 226);
+            panel2.Size = new Size(957, 174);
             panel2.TabIndex = 1;
             // 
             // tbxItem
